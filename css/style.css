@@ -1,0 +1,1240 @@
+@charset "UTF-8";
+@import url("fonts.css");
+@import url("animate.css");
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: Roboto, "儷黑 Pro", 微软雅黑, 黑体, "LiHei Pro Medium", "Microsoft YaHei", SimHei, sans-serif;
+}
+
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-size: .92rem;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+  color: currentColor;
+}
+
+img {
+  width: 100%;
+  height: auto;
+  vertical-align: middle;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+/*-- header --*/
+.header {
+  position: fixed;
+  z-index: 100;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.6);
+}
+
+.header .header-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: .6rem 1rem;
+}
+
+.header .header-container .logo {
+  width: 120px;
+  padding: 0 .5rem 0 0;
+}
+
+/*-- language --*/
+.language-pack {
+  z-index: 100;
+  margin-top: .2rem;
+}
+
+.language-pack:hover {
+  opacity: 1;
+}
+
+.language-pack:hover .language-icon {
+  border: 2px solid #44e993;
+}
+
+.language-pack:hover .language-icon span {
+  color: #44e993;
+}
+
+.language-pack .language-icon {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background: transparent;
+  border-radius: 30px;
+  border: 2px solid #ffffff;
+  padding: .6rem .8rem;
+  cursor: pointer;
+  min-width: 80px;
+  mix-blend-mode: difference;
+}
+
+.language-pack .language-icon span {
+  display: block;
+  color: #ffffff;
+  font-weight: 800;
+}
+
+.language-pack .language-icon .language::after {
+  content: '/';
+  margin: 0 .3rem;
+  font-size: 14px;
+  font-weight: normal;
+}
+
+.language-pack .language-icon img {
+  width: 24px;
+  height: 24px;
+  -webkit-filter: drop-shadow(1px 2px 2px rgba(0, 0, 0, 0.2));
+          filter: drop-shadow(1px 2px 2px rgba(0, 0, 0, 0.2));
+  margin-right: 5px;
+}
+
+.switch-list {
+  position: fixed;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  top: 5rem;
+  right: 2rem;
+  margin-right: 2rem;
+  background: #141414fe;
+  padding: 1rem 1.8rem 2rem 1.8rem;
+  z-index: 99;
+}
+
+.switch-list::before {
+  content: "";
+  display: block;
+  width: 0px;
+  height: 18px;
+  border-color: transparent transparent #141414fe transparent;
+  border-style: solid;
+  border-width: 11px 7px;
+  position: absolute;
+  right: 10px;
+  top: -2.5rem;
+}
+
+.switch-list ul:nth-child(1) {
+  margin-right: 22px;
+}
+
+.switch-list ul p {
+  color: #ffffff7d;
+  padding: .6rem 0 .6rem 1rem;
+}
+
+.switch-list ul li::after {
+  content: '';
+  display: block;
+  width: 140px;
+  height: 0.5px;
+  background-color: #ffffff5e;
+  text-align: center;
+}
+
+.switch-list ul li a {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  color: #ffffffda;
+  padding: .8rem 0 .8rem 1.2rem;
+  -webkit-transition: .3s;
+  transition: .3s;
+  position: relative;
+}
+
+.switch-list ul li a:hover {
+  -webkit-filter: contrast(200%);
+          filter: contrast(200%);
+  -webkit-transform: translate(-5px);
+          transform: translate(-5px);
+  -webkit-transition: .3s;
+  transition: .3s;
+  color: #44e993;
+}
+
+.switch-list ul li .selected {
+  color: #44e993;
+}
+
+.switch-list ul li .selected span {
+  display: block;
+  width: 5px;
+  height: 5px;
+  position: absolute;
+  left: 6px;
+  top: 20px;
+  background-color: #44e993;
+  border-radius: 50%;
+}
+
+.switch-list ul .last-nation::after {
+  content: '';
+  display: none;
+}
+
+/*--site-main-wrapper START!--*/
+.site-main-wrapper {
+  background: radial-gradient(ellipse at 50% 50%, #ffffff 0%, #7dd8ff 100%);
+  overflow: hidden;
+}
+
+.site-main-wrapper .pc-mode {
+  position: relative;
+  width: 100%;
+  height: 44vw;
+}
+
+.site-main-wrapper .pc-mode .background {
+  width: 100%;
+  height: 33vw;
+  position: absolute;
+  background: url("../images/events/web1920.jpg") top center no-repeat;
+  background-size: auto 110%, auto;
+  z-index: 10;
+  -webkit-animation: move-glow 8s infinite alternate both ease;
+          animation: move-glow 8s infinite alternate both ease;
+}
+
+.site-main-wrapper .pc-mode .glow {
+  width: 100%;
+  height: 33vw;
+  background: url("../images/events/heartlight.jpg") top center no-repeat;
+  mix-blend-mode: screen;
+  -webkit-animation: purple_light 3.5s ease forwards infinite;
+          animation: purple_light 3.5s ease forwards infinite;
+  -webkit-animation-delay: .2s;
+          animation-delay: .2s;
+  position: absolute;
+  background-size: auto 100%, auto;
+  z-index: 29;
+}
+
+.site-main-wrapper .pc-mode .character {
+  position: absolute;
+  width: 100%;
+  height: 33vw;
+  background: url("../images/events/character_01.png") top center no-repeat;
+  background-size: auto 100%, auto;
+  z-index: 17;
+}
+
+.site-main-wrapper .pc-mode .connect-part {
+  position: absolute;
+  width: 100%;
+  height: 44vw;
+  background: url("../images/events/all_light.jpg") top center no-repeat;
+  background-size: auto 100%, auto;
+  mix-blend-mode: screen;
+  z-index: 21;
+}
+
+.site-main-wrapper .pc-mode .treasure {
+  position: absolute;
+  width: 100%;
+  height: 44vw;
+  background: url("../images/events/connect.png") top center;
+  background-size: auto 100%, auto;
+  z-index: 18;
+}
+
+.site-main-wrapper .pc-mode .ribbon {
+  position: relative;
+  width: 100%;
+  height: 33vw;
+  background-size: auto 100%, auto;
+  z-index: 18;
+}
+
+.site-main-wrapper .pc-mode .banner-slogan-cn {
+  background: url("../images/events/slogan_cn.png") top center no-repeat;
+}
+
+.site-main-wrapper .pc-mode .banner-slogan-en {
+  background: url("../images/events/slogan_en.png") top center no-repeat;
+}
+
+.site-main-wrapper .pc-mode .banner-slogan-id {
+  background: url("../images/events/slogan_id.png") top center no-repeat;
+}
+
+.site-main-wrapper .pc-mode .banner-slogan-jp {
+  background: url("../images/events/slogan_jp.png") top center no-repeat;
+}
+
+.site-main-wrapper .pc-mode .banner-slogan-kr {
+  background: url("../images/events/slogan_ka.png") top center no-repeat;
+}
+
+.site-main-wrapper .pc-mode .banner-slogan-th {
+  background: url("../images/events/slogan_th.png") top center no-repeat;
+}
+
+.site-main-wrapper .pc-mode .banner-slogan-tw {
+  background: url("../images/events/slogan_tw.png") top center no-repeat;
+}
+
+.site-main-wrapper .pc-mode .banner-slogan-vn {
+  background: url("../images/events/slogan_vn.png") top center no-repeat;
+}
+
+.site-main-wrapper .pc-mode .bnTitle {
+  position: absolute;
+  width: 100%;
+  height: 33vw;
+  background-size: auto 100%, auto;
+  z-index: 20;
+  opacity: 1;
+}
+
+/** -- prize-- **/
+.main {
+  position: relative;
+}
+
+.prize-box {
+  display: -ms-grid;
+  display: grid;
+  place-content: center;
+  position: relative;
+  top: -12rem;
+  z-index: 21;
+}
+
+.prize-box .treasure-container {
+  width: 1170px;
+  border-radius: 25px;
+  background: -webkit-gradient(linear, left top, left bottom, from(#92d7ff), color-stop(4%, #0074bd), color-stop(96%, #00c4ff), to(#00dcff));
+  background: linear-gradient(180deg, #92d7ff 0%, #0074bd 4%, #00c4ff 96%, #00dcff 100%);
+  border-top: 2px solid #00b3ff;
+  border-right: 3px solid #00b3ff;
+  border-left: 3px solid #00b3ff;
+  border-bottom: 1px solid #00b3ff;
+  -webkit-box-shadow: 0px 15px #4d7dbb;
+          box-shadow: 0px 15px #4d7dbb;
+}
+
+.prize-box .treasure-container::after {
+  position: absolute;
+  left: -1%;
+  top: 0;
+  display: inline-block;
+  -webkit-transform: scale(1.5) rotate(-25deg);
+          transform: scale(1.5) rotate(-25deg);
+}
+
+.prize-box .treasure-container .treasure-img {
+  position: relative;
+  display: inline-block;
+  width: 30%;
+  margin-left: .5vw;
+}
+
+.prize-box .treasure-container .treasure-img .inner-img {
+  position: absolute;
+  width: 390px;
+  left: 2%;
+  top: -37px;
+  pointer-events: none;
+}
+
+.prize-box .treasure-container .treasure-img .inner-img:nth-child(1) {
+  mix-blend-mode: screen;
+  -webkit-animation: flicker-2 3s infinite;
+          animation: flicker-2 3s infinite;
+  z-index: 20;
+}
+
+.prize-box .treasure-container .text-prize {
+  display: inline-block;
+  width: 70%;
+  position: relative;
+  text-align: center;
+  left: 30%;
+  padding: .5rem 0 1.5rem 0;
+}
+
+.prize-box .treasure-container .text-prize .prize {
+  padding-right: 3rem;
+}
+
+.prize-box .treasure-container .text-prize h4 {
+  font-size: 3rem;
+  font-weight: bold;
+  background: -webkit-gradient(linear, left top, left bottom, from(#ffffff), to(#ffc800));
+  background: linear-gradient(to bottom, #ffffff, #ffc800);
+  color: transparent;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  -o-background-clip: text;
+  margin: 0 0 -1rem 0;
+}
+
+.prize-box .treasure-container .text-prize h4 span {
+  font-size: 1.2rem;
+}
+
+.prize-box .treasure-container .text-prize h2 {
+  font-size: 7.5rem;
+  background: -webkit-gradient(linear, left top, left bottom, from(#ffffff), to(#ffc800));
+  background: linear-gradient(to bottom, #ffffff, #ffc800);
+  color: transparent;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  -o-background-clip: text;
+  margin: 0;
+  letter-spacing: -2px;
+  -webkit-filter: drop-shadow(0px 5px 0px #833209);
+          filter: drop-shadow(0px 5px 0px #833209);
+}
+
+/*-- 指定遊戲--*/
+.chosed-game {
+  top: -9rem;
+}
+
+.square {
+  position: relative;
+  display: -ms-grid;
+  display: grid;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.square h2 {
+  text-align: center;
+  background: -webkit-gradient(linear, left top, left bottom, from(#ffffff), to(#00d5ff));
+  background: linear-gradient(to bottom, #ffffff, #00d5ff);
+  color: transparent;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  -o-background-clip: text;
+  -webkit-filter: drop-shadow(0px 5px 0px #090983);
+          filter: drop-shadow(0px 5px 0px #090983);
+  -webkit-text-stroke: 1px #090983;
+  font-size: 3.8rem;
+  margin: 0 0 1rem 0;
+  position: relative;
+}
+
+.square .part {
+  width: 1170px;
+  border-radius: 25px;
+  background: -webkit-gradient(linear, left top, left bottom, from(#92d7ff), color-stop(4%, #005ebd), color-stop(96%, #00c4ff), to(#00dcff));
+  background: linear-gradient(180deg, #92d7ff 0%, #005ebd 4%, #00c4ff 96%, #00dcff 100%);
+  padding: 2.5rem 1.8rem;
+  border-top: 2px solid #00b3ff;
+  border-right: 3px solid #00b3ff;
+  border-left: 3px solid #00b3ff;
+  border-bottom: 1px solid #00b3ff;
+  -webkit-box-shadow: 0px 15px #4d7dbb  , inset 0px 0px 7px 3px #aaf9ff;
+          box-shadow: 0px 15px #4d7dbb  , inset 0px 0px 7px 3px #aaf9ff;
+}
+
+.square .part .select-game {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding-top: 2rem;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+.square .part .select-game .each-game {
+  color: #fff;
+  text-align: center;
+  letter-spacing: 1px;
+}
+
+.square .part .select-game .each-game .pic {
+  -webkit-transition: .3s;
+  transition: .3s;
+}
+
+.square .part .select-game .each-game a:hover .pic {
+  -webkit-filter: contrast(120%) brightness(120%) drop-shadow(1px 1px 10px rgba(69, 0, 67, 0.8));
+          filter: contrast(120%) brightness(120%) drop-shadow(1px 1px 10px rgba(69, 0, 67, 0.8));
+  -webkit-transform: translateY(-10px);
+          transform: translateY(-10px);
+  -webkit-transition: .3s;
+  transition: .3s;
+}
+
+.square .part .select-game .each-game a:hover p {
+  color: #ffea00;
+}
+
+.square .part .select-game .pic {
+  width: 92%;
+  margin: 0 auto;
+  -webkit-box-shadow: -7px -7px 10px -5px transparent, 7px 7px 10px -5px transparent, 0 0 5px 0px rgba(255, 255, 255, 0), 0 30px 35px -20px rgba(0, 0, 0, 0.5);
+          box-shadow: -7px -7px 10px -5px transparent, 7px 7px 10px -5px transparent, 0 0 5px 0px rgba(255, 255, 255, 0), 0 30px 35px -20px rgba(0, 0, 0, 0.5);
+}
+
+.square .part .select-game p {
+  margin: 1rem 0 .5rem 0;
+}
+
+.square .part .others-game {
+  padding-top: 2rem;
+}
+
+.square .part .others-game p {
+  color: #fff;
+  line-height: 2;
+  font-size: .85rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin: 1.5rem auto;
+  padding: 0 2rem;
+}
+
+.square .part .others-game p a {
+  margin: 0 .5rem;
+}
+
+.square .part .others-game p a:hover {
+  color: #ffea00;
+}
+
+.square .part .others-game .line {
+  width: 100%;
+  height: 1.5px;
+  background: -webkit-gradient(linear, left top, right top, color-stop(5%, transparent), color-stop(50%, #88d7ff), color-stop(95%, transparent));
+  background: linear-gradient(to right, transparent 5%, #88d7ff 50%, transparent 95%);
+}
+
+/*--活動細節--*/
+.event {
+  top: -6rem;
+}
+
+.details {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.details .word {
+  -ms-flex-preferred-size: 54%;
+      flex-basis: 54%;
+}
+
+.details .word ul {
+  color: #fff;
+}
+
+.details .word ul li {
+  margin: .5rem 0;
+  line-height: 1.8;
+}
+
+.details .word ul li span {
+  color: #00f7ff;
+  font-weight: 800;
+}
+
+.details .word ul li strong {
+  color: #00f7ff;
+}
+
+.details ol {
+  list-style: none;
+  padding-left: 2.5rem;
+}
+
+.details ol li {
+  text-indent: -1em;
+}
+
+.details ol li::before {
+  content: '\25CB';
+  width: 5px;
+  height: 5px;
+  color: #00f7ff;
+  display: inline-block;
+  margin-right: 0.5rem;
+}
+
+.details .decorate-img {
+  -ms-flex-preferred-size: 30%;
+      flex-basis: 30%;
+  -webkit-animation: shine-mb 5s infinite both;
+          animation: shine-mb 5s infinite both;
+}
+
+.all_table {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-top: 1rem;
+  padding: 0 1.5rem;
+}
+
+.all_table .table {
+  width: 100%;
+}
+
+.all_table .table:nth-child(1) {
+  margin: 0 1rem 0 0;
+}
+
+.all_table .table ul h3 {
+  color: #ffe600;
+  font-size: 1rem;
+  margin: 0 0 .8rem .5rem;
+}
+
+.all_table .table ul li {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  text-align: center;
+}
+
+.all_table .table ul li:nth-child(1) {
+  border: none;
+  background-color: transparent !important;
+}
+
+.all_table .table ul li:nth-child(odd) span {
+  background-color: rgba(0, 0, 0, 0.28);
+}
+
+.all_table .table ul li span {
+  display: block;
+  color: #fff;
+  padding: .8rem 0;
+}
+
+.all_table .table ul li span:nth-child(1) {
+  width: 30%;
+  margin-right: 3px;
+}
+
+.all_table .table ul li span:nth-child(2) {
+  width: 70%;
+}
+
+.all_table .table ul .colored span {
+  color: #ffffff;
+  padding: .8rem 0;
+  font-weight: bold;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+.all_table .table ul .colored span:nth-child(1) {
+  background: -webkit-gradient(linear, left top, left bottom, from(#ffceff), color-stop(90%, #00e1ff), to(transparent));
+  background: linear-gradient(180deg, #ffceff 0%, #00e1ff 90%, transparent 100%);
+  border-radius: 20px 20px 0 0;
+}
+
+.all_table .table ul .colored span:nth-child(2) {
+  background: -webkit-gradient(linear, left top, left bottom, from(#ffceff), color-stop(90%, #00e1ff), to(transparent));
+  background: linear-gradient(180deg, #ffceff 0%, #00e1ff 90%, transparent 100%);
+  border-radius: 20px 20px 0 0;
+}
+
+.annoucement {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.annoucement .desc {
+  width: 1170px;
+  color: #0267b5;
+  padding: 0 3rem 5rem 3rem;
+}
+
+.annoucement .desc .title {
+  margin-top: .8rem;
+  font-size: 1.4rem;
+  letter-spacing: 2px;
+  font-weight: bold;
+  color: #0267b5;
+}
+
+.annoucement .desc .each-annouce {
+  padding: 5px 0 0 25px;
+}
+
+.annoucement .desc ul li {
+  margin: .8rem 0;
+  list-style-type: circle;
+}
+
+/*-- footer--*/
+.footer {
+  background: #ffffff2e;
+  width: 100%;
+  height: 100px;
+  background-size: cover;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.footer p {
+  color: #013f6e79;
+  font-size: 1rem;
+  letter-spacing: 1px;
+  text-align: center;
+}
+
+.top_btn {
+  position: fixed;
+  bottom: 1rem;
+  right: 1rem;
+  cursor: pointer;
+  opacity: 0.6;
+}
+
+.top_btn:hover {
+  opacity: 1;
+}
+
+.top_btn:hover p {
+  background-color: #44e993;
+}
+
+.top_btn:hover span {
+  color: #000;
+}
+
+.top_btn p {
+  background: rgba(0, 0, 0, 0.7);
+  border-radius: 50%;
+  width: 82px;
+  height: 82px;
+  display: -ms-grid;
+  display: grid;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.top_btn p span {
+  color: #44e993;
+  font-weight: 800;
+  display: block;
+}
+
+/*--switch another mode --*/
+@media screen and (max-width: 1600px) {
+  .site-main-wrapper .pc-mode {
+    height: 735px;
+  }
+  .site-main-wrapper .pc-mode .connect-part {
+    height: 735px;
+  }
+  .site-main-wrapper .pc-mode .treasure {
+    height: 735px;
+  }
+  .site-main-wrapper .pc-mode .background, .site-main-wrapper .pc-mode .glow, .site-main-wrapper .pc-mode .character, .site-main-wrapper .pc-mode .character-right, .site-main-wrapper .pc-mode .character .handR, .site-main-wrapper .pc-mode .character .handL, .site-main-wrapper .pc-mode .mask, .site-main-wrapper .pc-mode .ribbon, .site-main-wrapper .pc-mode .banner-slogan-cn, .site-main-wrapper .pc-mode .banner-slogan-en, .site-main-wrapper .pc-mode .banner-slogan-id, .site-main-wrapper .pc-mode .banner-slogan-jp, .site-main-wrapper .pc-mode .banner-slogan-kr, .site-main-wrapper .pc-mode .banner-slogan-th, .site-main-wrapper .pc-mode .banner-slogan-tw, .site-main-wrapper .pc-mode .banner-slogan-vn {
+    height: 572px;
+  }
+}
+
+@media screen and (max-width: 1400px) {
+  .site-main-wrapper .pc-mode {
+    height: 735px;
+  }
+  .site-main-wrapper .pc-mode .connect-part {
+    height: 700px;
+  }
+  .site-main-wrapper .pc-mode .treasure {
+    height: 700px;
+  }
+  .site-main-wrapper .pc-mode .background {
+    -webkit-animation: move-glow 12s infinite alternate both ease;
+            animation: move-glow 12s infinite alternate both ease;
+  }
+  .site-main-wrapper .pc-mode .background, .site-main-wrapper .pc-mode .glow, .site-main-wrapper .pc-mode .character, .site-main-wrapper .pc-mode .character-right, .site-main-wrapper .pc-mode .character .handR, .site-main-wrapper .pc-mode .character .handL, .site-main-wrapper .pc-mode .mask, .site-main-wrapper .pc-mode .ribbon, .site-main-wrapper .pc-mode .banner-slogan-cn, .site-main-wrapper .pc-mode .banner-slogan-en, .site-main-wrapper .pc-mode .banner-slogan-id, .site-main-wrapper .pc-mode .banner-slogan-jp, .site-main-wrapper .pc-mode .banner-slogan-kr, .site-main-wrapper .pc-mode .banner-slogan-th, .site-main-wrapper .pc-mode .banner-slogan-tw, .site-main-wrapper .pc-mode .banner-slogan-vn {
+    height: 535px;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .site-main-wrapper .pc-mode {
+    height: 570px;
+  }
+  .site-main-wrapper .pc-mode .connect-part {
+    height: 570px;
+  }
+  .site-main-wrapper .pc-mode .treasure {
+    height: 600px;
+  }
+  .site-main-wrapper .pc-mode .background, .site-main-wrapper .pc-mode .glow, .site-main-wrapper .pc-mode .character, .site-main-wrapper .pc-mode .character-right, .site-main-wrapper .pc-mode .character .handR, .site-main-wrapper .pc-mode .character .handL, .site-main-wrapper .pc-mode .mask, .site-main-wrapper .pc-mode .ribbon, .site-main-wrapper .pc-mode .banner-slogan-cn, .site-main-wrapper .pc-mode .banner-slogan-en, .site-main-wrapper .pc-mode .banner-slogan-id, .site-main-wrapper .pc-mode .banner-slogan-jp, .site-main-wrapper .pc-mode .banner-slogan-kr, .site-main-wrapper .pc-mode .banner-slogan-th, .site-main-wrapper .pc-mode .banner-slogan-tw, .site-main-wrapper .pc-mode .banner-slogan-vn {
+    height: 458px;
+  }
+  .site-main-wrapper .pc-mode .bnTitle {
+    top: 10px;
+  }
+  .prize-box {
+    top: -7rem;
+  }
+  .prize-box .treasure-container {
+    width: 954px;
+  }
+  .prize-box .treasure-container .text-prize {
+    left: 27%;
+  }
+  .prize-box .treasure-container .text-prize h2 {
+    font-size: 6.4rem;
+  }
+  .prize-box .treasure-container .text-prize .prize {
+    padding: 0;
+  }
+  .chosed-game {
+    top: -5rem;
+  }
+  .event {
+    top: -3rem;
+  }
+  .square .part {
+    width: 954px;
+  }
+  .pic {
+    width: 95%;
+    margin: 0 auto;
+  }
+}
+
+@media screen and (max-width: 970px) {
+  .site-main-wrapper .pc-mode {
+    height: 530px;
+  }
+  .site-main-wrapper .pc-mode .connect-part {
+    height: 530px;
+  }
+  .site-main-wrapper .pc-mode .treasure {
+    height: 530px;
+  }
+  .site-main-wrapper .pc-mode .background, .site-main-wrapper .pc-mode .glow, .site-main-wrapper .pc-mode .character, .site-main-wrapper .pc-mode .character-right, .site-main-wrapper .pc-mode .character .handR, .site-main-wrapper .pc-mode .character .handL, .site-main-wrapper .pc-mode .mask, .site-main-wrapper .pc-mode .ribbon, .site-main-wrapper .pc-mode .banner-slogan-cn, .site-main-wrapper .pc-mode .banner-slogan-en, .site-main-wrapper .pc-mode .banner-slogan-id, .site-main-wrapper .pc-mode .banner-slogan-jp, .site-main-wrapper .pc-mode .banner-slogan-kr, .site-main-wrapper .pc-mode .banner-slogan-th, .site-main-wrapper .pc-mode .banner-slogan-tw, .site-main-wrapper .pc-mode .banner-slogan-vn {
+    height: 411px;
+  }
+  .prize-box {
+    top: -8rem;
+  }
+  .prize-box .treasure-container {
+    width: 800px;
+  }
+  .prize-box .text-prize h2 {
+    font-size: 6.5rem;
+  }
+  .prize-box .treasure-container .text-prize h4 {
+    font-size: 2rem;
+  }
+  .prize-box .treasure-img {
+    padding: 1rem 0 0 2rem;
+  }
+  .prize-box .treasure-container .treasure-img .inner-img {
+    width: 290px;
+    top: -1rem;
+  }
+  .prize-box .treasure-container .text-prize {
+    left: 28%;
+    padding: .5rem .5rem .5rem 0;
+  }
+  .prize-box .treasure-container .text-prize h2 {
+    font-size: 5.2rem;
+  }
+  .chosed-game {
+    top: -6rem;
+  }
+  .square h2 {
+    font-size: 3rem;
+  }
+  .square .part {
+    width: 800px;
+  }
+  .event {
+    top: -4rem;
+  }
+  .details .decorate-img {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .annoucement {
+    margin: 2rem 0 0 0;
+  }
+  .annoucement .desc .title {
+    min-width: 6rem;
+  }
+}
+
+@media screen and (max-width: 840px) {
+  .site-main-wrapper .pc-mode {
+    height: 475px;
+  }
+  .site-main-wrapper .pc-mode .connect-part, .site-main-wrapper .pc-mode .treasure {
+    height: 510px;
+  }
+  .site-main-wrapper .pc-mode .background, .site-main-wrapper .pc-mode .glow, .site-main-wrapper .pc-mode .character, .site-main-wrapper .pc-mode .character-right, .site-main-wrapper .pc-mode .character .handR, .site-main-wrapper .pc-mode .character .handL, .site-main-wrapper .pc-mode .mask, .site-main-wrapper .pc-mode .ribbon, .site-main-wrapper .pc-mode .banner-slogan-cn, .site-main-wrapper .pc-mode .banner-slogan-en, .site-main-wrapper .pc-mode .banner-slogan-id, .site-main-wrapper .pc-mode .banner-slogan-jp, .site-main-wrapper .pc-mode .banner-slogan-kr, .site-main-wrapper .pc-mode .banner-slogan-th, .site-main-wrapper .pc-mode .banner-slogan-tw, .site-main-wrapper .pc-mode .banner-slogan-vn {
+    height: 390px;
+  }
+  .prize-box {
+    top: -5rem;
+  }
+  .prize-box .treasure-container {
+    width: 744px;
+  }
+  .prize-box .treasure-container .treasure-img {
+    width: 318px;
+    left: -3%;
+  }
+  .prize-box .text-prize {
+    padding: 2.5rem 2rem .5rem 0;
+  }
+  .chosed-game {
+    top: -3rem;
+  }
+  .square .part {
+    width: 744px;
+  }
+  .event {
+    top: -1rem;
+  }
+}
+
+@media screen and (max-width: 760px) {
+  .site-main-wrapper {
+    height: 100%;
+  }
+  .site-main-wrapper .pc-mode {
+    position: relative;
+    width: 100%;
+    height: 115vw;
+  }
+  .site-main-wrapper .pc-mode .background {
+    height: 105vw;
+    background: url("../images/events/mobile.jpg") top center no-repeat;
+    background-size: 100%;
+    -webkit-animation: none;
+            animation: none;
+  }
+  .site-main-wrapper .pc-mode .glow {
+    height: 100%;
+    background: url("../images/events/light_mb.jpg") top center no-repeat;
+    background-size: 100%;
+    -webkit-transform-origin: 50% 60%;
+            transform-origin: 50% 60%;
+    -webkit-animation: purple_light2 3.5s ease forwards;
+            animation: purple_light2 3.5s ease forwards;
+    z-index: 21;
+  }
+  .site-main-wrapper .pc-mode .character {
+    height: 100%;
+    background: url("../images/events/mb_character.png") top center no-repeat;
+    background-size: 100%;
+  }
+  .site-main-wrapper .pc-mode .connect-part {
+    height: 100%;
+    background: url("../images/events/all_light_mb.jpg") top center no-repeat;
+    background-size: 100%;
+    z-index: 16;
+  }
+  .site-main-wrapper .pc-mode .treasure {
+    height: 100%;
+    background: url("../images/events/float-items-mb.png") top center;
+    background-size: 100%;
+    mix-blend-mode: normal;
+    -webkit-animation: brightness 2s infinite alternate;
+            animation: brightness 2s infinite alternate;
+    z-index: 19;
+  }
+  .site-main-wrapper .pc-mode .banner-slogan-cn {
+    background: url("../images/events/mb_slogan-cn.png") top center no-repeat;
+  }
+  .site-main-wrapper .pc-mode .banner-slogan-en {
+    background: url("../images/events/mb_slogan-en.png") top center no-repeat;
+  }
+  .site-main-wrapper .pc-mode .banner-slogan-id {
+    background: url("../images/events/mb_slogan-id.png") top center no-repeat;
+  }
+  .site-main-wrapper .pc-mode .banner-slogan-jp {
+    background: url("../images/events/mb_slogan-jp.png") top center no-repeat;
+  }
+  .site-main-wrapper .pc-mode .banner-slogan-kr {
+    background: url("../images/events/mb_slogan-ka.png") top center no-repeat;
+  }
+  .site-main-wrapper .pc-mode .banner-slogan-th {
+    background: url("../images/events/mb_slogan-th.png") top center no-repeat;
+  }
+  .site-main-wrapper .pc-mode .banner-slogan-tw {
+    background: url("../images/events/mb_slogan-tw.png") top center no-repeat;
+  }
+  .site-main-wrapper .pc-mode .banner-slogan-vn {
+    background: url("../images/events/mb_slogan-vn.png") top center no-repeat;
+  }
+  .site-main-wrapper .pc-mode .bnTitle {
+    top: 0;
+    height: 100%;
+    background-size: 100%;
+  }
+  .site-main-wrapper .pc-mode .ribbon {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background: url("../images/events/cloud.png") top center no-repeat;
+    background-size: 100%;
+    z-index: 18;
+  }
+  .switch-list {
+    padding: 1rem;
+  }
+  .switch-list ul:nth-child(1) {
+    margin-right: 15px;
+  }
+  .prize-box {
+    display: block;
+    margin: 0 10px;
+  }
+  .prize-box .treasure-container {
+    width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    padding: 5px;
+    overflow: hidden;
+  }
+  .prize-box .treasure-container .treasure-img {
+    display: none;
+    width: 100%;
+    left: initial;
+    padding: 1rem 0 2rem 2rem;
+    margin: 0;
+  }
+  .prize-box .treasure-container .treasure-img .inner-img {
+    width: 250px;
+    position: relative;
+    margin: 0 auto;
+    left: initial;
+    top: 1rem;
+  }
+  .prize-box .treasure-container .treasure-img .inner-img:nth-child(1) {
+    position: absolute;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+            transform: translateX(-50%);
+    -webkit-animation: treasure-bling 3s infinite both;
+            animation: treasure-bling 3s infinite both;
+  }
+  .prize-box .treasure-container .text-prize {
+    margin: 0;
+    padding: 0;
+    display: block;
+    width: 100%;
+    left: inherit;
+  }
+  .prize-box .treasure-container .text-prize h2 {
+    font-size: 14vw;
+    letter-spacing: -3px;
+  }
+  .prize-box .treasure-container .text-prize h4 {
+    margin: 0 0 -5px 0;
+    font-size: 2rem;
+  }
+  .square {
+    margin-top: 2rem;
+  }
+  .square h2 {
+    font-size: 2.2rem;
+    -webkit-filter: drop-shadow(0 2px 0 #090983);
+            filter: drop-shadow(0 2px 0 #090983);
+  }
+  .square h2::before, .square h2::after {
+    width: 38px;
+    height: 38px;
+    vertical-align: middle;
+  }
+  .square .part {
+    width: 100%;
+    padding: 1.2rem 1rem;
+  }
+  .prize-box, .chosed-game, .event {
+    top: initial;
+  }
+  .main {
+    position: relative;
+    margin: 15px 10px;
+  }
+  .prize-box .treasure-img-mb {
+    width: 65%;
+    margin: 2rem auto 0 auto;
+  }
+  .prize-box .text-prize {
+    padding: .5rem 0;
+  }
+  .square .part .select-game {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: (1fr)[2];
+        grid-template-columns: repeat(2, 1fr);
+  }
+  .square .part .select-game p {
+    margin: .5rem 0 1.5rem 0;
+  }
+  .square .part .others-game {
+    padding: .25rem 0 1rem 0;
+  }
+  .square .part .others-game p {
+    padding: 0;
+  }
+  .details {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .details .word ul li {
+    line-height: 1.5;
+  }
+  .details .decorate-img {
+    display: none;
+  }
+  .all_table {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    padding: 0;
+    margin-top: .5rem;
+  }
+  .table {
+    padding: 0;
+  }
+  .table:nth-child(2) {
+    margin-top: 2rem;
+  }
+  .annoucement .desc {
+    width: 100%;
+    padding: 1rem 1.2rem;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .annoucement .desc .each-annouce {
+    padding: 14;
+  }
+  .annoucement .desc ul {
+    margin: 0;
+  }
+  .annoucement .desc ul li {
+    margin: 1rem 0;
+    line-height: 1.7;
+  }
+  .header .header-container {
+    padding: .4rem;
+  }
+  .header .header-container .logo {
+    width: 75px;
+    padding: 0;
+  }
+  .language-pack .language-icon {
+    padding: .4rem .6rem;
+  }
+  .language-pack .language-icon img {
+    width: 20px;
+    height: 20px;
+  }
+  .language-pack .language-icon .language {
+    font-size: .9rem;
+  }
+  .switch-list {
+    top: 4.2rem;
+    margin-right: 0rem;
+  }
+  .top_btn {
+    bottom: .8rem;
+    right: .5rem;
+  }
+  .top_btn p {
+    width: 70px;
+    height: 70px;
+  }
+  .footer p {
+    font-size: .7rem;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .prize-box .treasure-container .treasure-img .inner-img {
+    width: 210px;
+  }
+  .prize-box .treasure-container .text-prize h4 {
+    font-size: 9vw;
+  }
+  .switch-list {
+    margin: .5rem;
+  }
+  .switch-list ul li::after {
+    width: 100%;
+  }
+}
+/*# sourceMappingURL=style.css.map */
