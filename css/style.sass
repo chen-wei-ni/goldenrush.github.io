@@ -1,0 +1,841 @@
+@import url('fonts.css')
+@import url('animate.css')
+@mixin size($w,$h:$w)
+    width: $w
+    height: $h
+@mixin pos()
+    position: absolute
+@mixin abpos($l:inital,$t:initial)
+    position: absolute
+    left: $l
+    top: $t    
+
+$bgColor: #0d0f10
+
+body
+    height: 100%
+    margin: 0
+    padding: 0
+    font-family: Roboto, "儷黑 Pro", 微软雅黑, 黑体, "LiHei Pro Medium", "Microsoft YaHei", SimHei, sans-serif
+*
+    box-sizing: border-box
+    font-size: .92rem
+    margin: 0 
+    padding: 0
+a
+    text-decoration: none
+    color: currentColor
+img
+    width: 100%
+    height: auto
+    vertical-align: middle
+ul
+    list-style: none
+    padding: 0
+
+/*-- header --*/
+.header
+    position: fixed
+    z-index: 100
+    width: 100%
+    background: rgba(black,0.6)
+    .header-container
+        display: flex
+        align-items: center
+        justify-content: space-between
+        padding: .6rem 1rem 
+        .logo
+            width: 120px
+            padding: 0 .5rem 0 0
+/*-- language --*/
+.language-pack
+    z-index: 100
+    margin-top: .2rem
+    &:hover
+        opacity: 1
+        .language-icon
+            border: 2px solid #44e993
+            letter-spacing: 0.2em
+            box-shadow: 0 0 25px #44e993
+            
+            span
+                color: #44e993
+    .language-icon
+        display: flex
+        justify-content: space-evenly
+        position: relative
+        align-items: center
+        background: transparent
+        border-radius: 30px
+        border: 2px solid #ffffff
+        padding: .6rem .8rem
+        cursor: pointer
+        min-width: 80px
+        mix-blend-mode: difference
+        transition:  0.5s
+        span
+            display: block
+            color: #ffffff
+            font-weight: 800
+        .language
+            &::after                
+                content: '/'
+                margin: 0 .3rem
+                font-size: 14px
+                font-weight: normal
+        img
+            +size(24px)
+            filter: drop-shadow(1px 2px 2px rgba(#000,0.2))
+            margin-right: 5px
+.switch-list
+    position: fixed
+    display: flex
+    top: 5rem
+    right: 2rem
+    margin-right: 2rem
+    background: #141414fe
+    padding: 1rem 1.8rem 2rem 1.8rem
+    z-index: 99
+    &::before
+        content: ""
+        display: block
+        width: 0px
+        height: 18px
+        border-color: transparent transparent #141414fe transparent
+        border-style: solid
+        border-width: 11px 7px
+        position: absolute
+        right: 10px
+        top: -2.5rem
+    ul 
+        &:nth-child(1)
+            margin-right: 22px
+        p
+            color: #ffffff7d
+            padding: .6rem 0 .6rem 1rem
+        li
+            &::after
+                content: ''
+                display: block
+                +size(140px,0.5px)
+                background-color: #ffffff5e
+                text-align: center
+            a
+                display: flex
+                color: #ffffffda
+                padding: .8rem 0 .8rem 1.2rem
+                transition: .3s
+                position: relative
+                &:hover
+                    filter: contrast(200%) 
+                    transform: translate(-5px)
+                    transition: .3s
+                    color: #44e993
+            .selected
+                color: #44e993
+                span
+                    display: block
+                    +size(5px)
+                    +pos()
+                    left: 6px
+                    top: 20px
+                    background-color: #44e993
+                    border-radius: 50%
+        .last-nation
+            &::after
+                content: ''
+                display: none
+/*--site-main-wrapper START!--*/
+.site-main-wrapper
+    background: #023bd1
+    .pc-mode
+        position: relative
+        width: 100%
+        height: 44vw
+        overflow: hidden
+        .background
+            width: 100%
+            height: 35vw
+            +pos()
+            background: url('../images/events/web1920.jpg') top center no-repeat
+            background-size: auto 100%, auto
+            z-index: 10
+            // animation: move-glow 8s infinite alternate both ease
+        .glow
+            +size(100%,33vw)
+            background: url('../images/events/heartlight.jpg') top center no-repeat
+            mix-blend-mode:  screen
+            animation: purple_light 3.5s ease infinite 
+            animation-delay: .2s
+            position: absolute
+            background-size: auto 100%, auto
+            z-index: 16
+        .character
+            position: absolute
+            +size(100%,35vw)
+            background: url('../images/events/character_01.png') top center no-repeat
+            background-size: auto 100%, auto
+            z-index: 17
+        .connect-part
+            +pos()
+            +size(100%,33vw)
+            background: url('../images/events/float-items.png') top center no-repeat
+            background-size: auto 100%, auto   
+            // animation:  brightness 2s infinite alternate    
+            z-index: 19
+        .float
+            animation:  brightness 2s infinite alternate  
+        .treasure
+            +pos()
+            +size(100%,44vw)
+            background: url('../images/events/connect.png') top center 
+            background-size: auto 100%, auto 
+            animation: sakura 1.5s linear forwards
+            z-index: 18  
+        .ribbon
+            position: absolute
+            +size(643px,630px)
+            background: url('../images/events/sakura.png')  no-repeat
+            transform: translateX(-50%) 
+            top: 0
+            left: 50%
+            // background-size: auto 100%, auto
+            filter: drop-shadow(0 0 20px #ff70b8)
+            animation: sakura_grow 1.5s infinite steps(3)
+            z-index: 17
+        .banner-slogan-cn
+            background: url('../images/events/slogan_cn.png') top center no-repeat
+        .banner-slogan-en
+            background: url('../images/events/slogan_en.png') top center no-repeat
+        .banner-slogan-id
+            background: url('../images/events/slogan_id.png') top center no-repeat
+        .banner-slogan-jp
+            background: url('../images/events/slogan_jp.png') top center no-repeat
+        .banner-slogan-kr
+            background: url('../images/events/slogan_ka.png') top center no-repeat
+        .banner-slogan-th
+            background: url('../images/events/slogan_th.png') top center no-repeat
+        .banner-slogan-tw
+            background: url('../images/events/slogan_tw.png') top center no-repeat
+        .banner-slogan-vn
+            background: url('../images/events/slogan_vn.png') top center no-repeat
+        .bnTitle
+            +pos()
+            +size(100%,33vw)
+            background-size: auto 100%, auto
+            z-index: 20
+            opacity: 1
+        
+/** -- prize-- **/
+.main
+    position: relative
+.prize-box
+    display: grid
+    place-content: center
+    position: relative
+    top: -14rem
+    z-index: 21
+    // .border
+    //     padding: .6rem
+    //     position: relative
+    //     width: 1170px
+    //     background: radial-gradient(ellipse at top, #ff28f8, #a400bd)
+    //     border-radius: 10px  
+    //     box-shadow: inset 0 0 15px #ffffff
+    .treasure-container
+        width: 1170px
+        border-radius: 25px
+        background: linear-gradient(180deg, #92d7ff 0%, #0400f6 4%, #00d0ff 96%, #e8fcff 100%)
+        border-top: 2px solid #b3fcff
+        border-right: 3px solid #b3fcff
+        border-left: 3px solid #b3fcff
+        border-bottom: 1px solid #b3fcff
+        box-shadow: 0px 15px #1896df 
+        &::after
+            // content: url('../images/events/heart.png')
+            position: absolute
+            left: -1%
+            top: 0
+            display: inline-block
+            transform: scale(1.5) rotate(-25deg)
+        .treasure-img
+            position: relative
+            display: inline-block
+            width: 30%
+            margin-left: .5vw
+            .inner-img
+                +pos()
+                width: 390px
+                left: 2%
+                top: -37px
+                pointer-events: none
+                &:nth-child(1)
+                    mix-blend-mode: screen
+                    animation: flicker-2 3s infinite
+                    z-index: 20
+        .text-prize
+            display: inline-block
+            width: 70%
+            position: relative
+            text-align: center
+            left: 30%
+            padding: .5rem 0 1.5rem 0
+            .prize
+                padding-right: 3rem
+            h4
+                font-size: 3rem
+                font-weight: bold
+                background: linear-gradient(to bottom, #ffffff, #ffc800)
+                color: transparent
+                background-clip: text
+                -webkit-background-clip: text
+                -moz-background-clip: text
+                -o-background-clip: text
+                margin: 0 0 -1rem 0
+                span
+                    font-size: 1.2rem
+            h2
+                font-size: 7.5rem
+                background: linear-gradient(to bottom, #ffffff, #ffc800)
+                color: transparent
+                background-clip: text
+                -webkit-background-clip: text
+                -moz-background-clip: text
+                -o-background-clip: text
+                margin: 0
+                letter-spacing: -2px               
+                filter: drop-shadow(0px 5px 0px #833209)
+/*-- 指定遊戲--*/
+.chosed-game
+    top: -10rem
+.square
+    position: relative
+    display: grid
+    justify-content: center
+    h2
+        text-align: center
+        background: linear-gradient(to bottom, #ffffff, #ffc800)
+        color: transparent
+        background-clip: text
+        -webkit-background-clip: text
+        -moz-background-clip: text
+        -o-background-clip: text
+        filter: drop-shadow(0px 5px 0px #3d1b2f)
+        -webkit-text-stroke: 1px #3d1b2f
+        font-size: 3.8rem
+        margin: 0 0 1rem 0
+        position: relative
+    .part
+        width: 1170px
+        border-radius: 25px
+        background: linear-gradient(180deg, #92d7ff 0%, #0400f6 4%, #00c4ff 96%, #e8fcff 100%)
+        padding: 2.5rem 1.8rem
+        border-top: 2px solid #b3fcff
+        border-right: 3px solid #b3fcff
+        border-left: 3px solid #b3fcff
+        border-bottom: 1px solid #b3fcff
+        box-shadow: 0px 15px #1896df   , inset 0px 0px 7px 3px #cbfcff
+        .select-game
+            display: flex
+            padding-top: 2rem
+            justify-content: space-around
+            .each-game
+                color: #fff
+                text-align: center
+                letter-spacing: 1px
+                .pic
+                    transition: .3s
+                a
+                    &:hover
+                        .pic
+                            filter: brightness(120%) drop-shadow(1px 1px 10px rgba(#450043,0.8))
+                            transform: translateY(-10px) scale(0.95)
+                            transition: .3s
+                        p
+                            color:#ffea00
+            .pic
+                width: 92%
+                margin: 0 auto
+                box-shadow:  -7px -7px 10px -5px transparent, 7px 7px 10px -5px transparent, 0 0 5px 0px rgba(255, 255, 255, 0), 0 30px 35px -20px rgba(0, 0, 0, 0.5)
+            p
+                margin: 1rem 0 .5rem 0
+        .others-game
+            padding-top: 2rem
+            p
+                color: #fff
+                line-height: 2
+                font-size: .85rem
+                display: flex
+                flex-wrap: wrap
+                justify-content: center
+                margin: 1.5rem auto
+                padding: 0 2rem
+                a
+                    margin: 0 .5rem
+                    &:hover
+                        color:#ffea00
+            .line
+                width: 100%
+                height: 1.5px
+                background: linear-gradient(to right,transparent 5%, #88d7ff 50%, transparent 95%)
+/*--活動細節--*/
+.event
+    top: -6rem
+.details
+    display: flex
+    justify-content: space-around
+    align-items: center
+    .word
+        flex-basis: 54%
+        ul
+            color: #fff
+            li
+                margin: .5rem 0
+                line-height: 1.8
+                span
+                    color:#ffea00
+                    font-weight: 800
+                strong
+                    color:#ffea00
+    ol
+        list-style: none
+        padding-left: 2.5rem
+        li
+            text-indent: -1em
+            &::before
+                content: '\25CB'
+                +size(5px)
+                color: #ffea00
+                display: inline-block
+                margin-right: 0.5rem
+    .decorate-img
+        flex-basis: 30%
+        animation: shine-mb 5s infinite both
+.all_table
+    display: flex
+    margin-top: 1rem 
+    padding: 0 1.5rem
+    .table
+        width: 100%
+        &:nth-child(1)
+            margin: 0 1rem 0 0
+        ul
+            h3
+                color: #ffe600
+                font-size: 1rem
+                margin: 0 0 .8rem .5rem
+            li
+                display: flex
+                text-align: center
+                &:nth-child(1)
+                    border: none
+                    background-color: transparent !important
+                &:nth-child(odd)
+                    span
+                        background-color: rgba(#000,0.28)
+                span 
+                    display: block
+                    color: #fff
+                    padding: .8rem 0
+                    &:nth-child(1)
+                        width: 30%
+                        margin-right: 3px
+                    &:nth-child(2)
+                        width: 70%
+            .colored
+                span
+                    color: #ffffff  
+                    padding: .8rem 0
+                    font-weight: bold
+                    text-shadow: 1px 1px 3px rgba(#000,0.5)
+                    &:nth-child(1)
+                        background: linear-gradient(180deg, #c2faff 0%, #14b5ff 90%, transparent 100%)
+                        border-radius: 20px 20px 0 0
+
+                    &:nth-child(2)
+                        background: linear-gradient(180deg, #c2faff 0%, #14b5ff 90%, transparent 100%)
+                        border-radius: 20px 20px 0 0
+                    
+.annoucement
+    // background-color: #10276e
+    display: flex
+    justify-content: center
+    .desc
+        width: 1170px      
+        color: rgba(#dbefff,1)
+        padding: 0 3rem 5rem 3rem
+        .title
+            margin-top: .8rem
+            font-size: 1.4rem
+            letter-spacing: 2px
+            font-weight: bold
+            color: #dbefff
+        .each-annouce
+            padding: 5px 0 0 25px
+        ul
+            li
+                margin: .8rem 0
+                list-style-type: circle
+/*-- footer--*/
+.footer
+    background: #0000002c
+    width: 100%
+    height: 100px
+    background-size: cover
+    display: flex
+    align-items: center
+    justify-content: center
+    p
+        color: #0091ff92
+        font-size: 1rem
+        letter-spacing: 1px
+        text-align: center
+
+.top_btn
+    position: fixed
+    bottom: 1rem
+    right: 1rem
+    cursor: pointer
+    opacity: 0.6
+    &:hover
+        opacity: 1
+        p
+            background-color: #44e993
+        span
+            color: #000
+    p
+        background: rgba(#000,0.7)
+        border-radius: 50%
+        +size(82px)
+        display: grid
+        justify-content: center
+        align-items: center
+        span
+            color: #44e993
+            font-weight: 800
+            display: block
+
+/*--switch another mode --*/  
+@media screen and ( max-width: 1680px )
+    .site-main-wrapper .pc-mode 
+        height: 735px
+        .treasure
+            height: 735px
+        .connect-part,.background, .glow, .character, .character-right, .character .handR, .character .handL,.mask,  .ribbon, 
+            height: 572px
+        .banner-slogan-cn, .banner-slogan-en, .banner-slogan-id, .banner-slogan-jp, .banner-slogan-kr, .banner-slogan-th, .banner-slogan-tw, .banner-slogan-vn,
+            height: 550px
+
+@media screen and ( max-width: 1400px  )
+    .site-main-wrapper .pc-mode 
+        height: 720px
+        .treasure
+            height: 700px
+        .connect-part,.background, .glow, .character, .character-right, .character .handR, .character .handL,.mask,  .ribbon, .banner-slogan-cn, .banner-slogan-en, .banner-slogan-id, .banner-slogan-jp, .banner-slogan-kr, .banner-slogan-th, .banner-slogan-tw, .banner-slogan-vn, 
+            height: 535px
+        .ribbon
+            transform: translateX(-50%) scale(0.88)
+@media screen and ( max-width: 1200px )
+    .site-main-wrapper .pc-mode 
+        height: 570px
+        .treasure
+            height: 600px
+        .connect-part,.background, .glow, .character, .character-right, .character .handR, .character .handL, .mask,  .banner-slogan-cn, .banner-slogan-en, .banner-slogan-id, .banner-slogan-jp, .banner-slogan-kr, .banner-slogan-th, .banner-slogan-tw, .banner-slogan-vn, 
+            height: 490px
+        .ribbon
+            height: 630px
+            
+    .prize-box
+        top: -7rem
+        .treasure-container
+            width: 954px
+            .text-prize 
+                left: 27%
+                h2
+                    font-size: 6.4rem
+                .prize
+                    padding: 0
+    .chosed-game
+        top: -5rem
+    .event
+        top: -3rem
+    .square 
+        .part
+            width: 954px
+        h2
+    .pic
+        width: 95%
+        margin: 0 auto
+@media screen and ( max-width: 970px )
+    .site-main-wrapper .pc-mode 
+        height: 510px
+        .treasure
+            height: 530px
+        .connect-part,.background, .glow, .character, .character-right, .character .handR, .character .handL, .mask,  .banner-slogan-cn, .banner-slogan-en, .banner-slogan-id, .banner-slogan-jp, .banner-slogan-kr, .banner-slogan-th, .banner-slogan-tw, .banner-slogan-vn, 
+            height: 411px
+
+    .prize-box
+        top: -8rem
+    .prize-box .treasure-container
+        width: 800px
+    .prize-box .text-prize h2
+        font-size: 6.5rem
+    .prize-box .treasure-container .text-prize h4
+        font-size: 2rem    
+    .prize-box .treasure-img
+        padding: 1rem 0 0 2rem 
+    .prize-box .treasure-container .treasure-img .inner-img
+        width: 290px
+        top: -1rem
+    .prize-box .treasure-container .text-prize
+        left: 28%
+        padding: .5rem .5rem .5rem 0
+    .prize-box .treasure-container .text-prize h2
+        font-size: 5.2rem
+    .chosed-game
+        top: -6rem
+    .square h2
+        font-size: 3rem
+    .square .part
+        width: 800px
+    .event
+        top: -4rem
+    .details .decorate-img
+        display: flex
+        align-items: center
+    .annoucement 
+        margin: 2rem 0 0 0
+        .desc .title
+            min-width: 6rem        
+
+@media screen and ( max-width: 840px )
+    .site-main-wrapper .pc-mode 
+        height: 464px
+        .treasure
+            height: 464px
+        .connect-part,.background, .glow, .character, .character-right, .character .handR, .character .handL, .mask,  .banner-slogan-cn, .banner-slogan-en, .banner-slogan-id, .banner-slogan-jp, .banner-slogan-kr, .banner-slogan-th, .banner-slogan-tw, .banner-slogan-vn, 
+            height: 411px
+        .ribbon
+            height: 600px
+    .prize-box
+        top: -5rem
+    .prize-box .treasure-container
+        width: 744px
+        .treasure-img
+            width: 318px
+            left: -3%
+    .prize-box .text-prize 
+        padding: 2.5rem 2rem .5rem 0
+    .chosed-game
+        top: -3rem
+    .square 
+        h2
+        .part
+            width: 744px
+    .event
+        top: -1rem
+@media screen and ( max-width: 760px )
+    .site-main-wrapper 
+        height: 100%
+        .pc-mode
+            position: relative
+            +size(100%,115vw)
+            .background
+                height: 115vw
+                background: url('../images/events/mobile.jpg') top center no-repeat
+                background-size: 100% 
+                animation: none
+            .glow
+                height: 100%
+                background: url('../images/events/light_mb.jpg') top center no-repeat
+                background-size: 100%
+                transform-origin: 50% 60%
+                animation: purple_light2 5s ease forwards infinite
+                mix-blend-mode: screen
+                z-index: 15
+            .character
+                height: 100%
+                background: url('../images/events/mb_character.png') top center no-repeat
+                background-size: 100%
+            .connect-part
+                height: 100%
+                background: url('../images/events/float-items-mb.png') top center no-repeat
+                background-size: 100%
+                z-index: 19
+            .treasure
+                height: 100%
+                background: url('../images/events/cloud.png') top center no-repeat
+                background-size: 100%
+                animation: sakura_mb 2s 
+                z-index: 19
+            .banner-slogan-cn
+                background: url('../images/events/mb_slogan-cn.png') top center no-repeat
+            .banner-slogan-en
+                background: url('../images/events/mb_slogan-en.png') top center no-repeat
+            .banner-slogan-id
+                background: url('../images/events/mb_slogan-id.png') top center no-repeat
+            .banner-slogan-jp
+                background: url('../images/events/mb_slogan-jp.png') top center no-repeat
+            .banner-slogan-kr
+                background: url('../images/events/mb_slogan-ka.png') top center no-repeat
+            .banner-slogan-th
+                background: url('../images/events/mb_slogan-th.png') top center no-repeat
+            .banner-slogan-tw
+                background: url('../images/events/mb_slogan-tw.png') top center no-repeat
+            .banner-slogan-vn
+                background: url('../images/events/mb_slogan-vn.png') top center no-repeat
+            .bnTitle
+                height: 100% 
+                background-size: 100%
+            .ribbon
+                width: 100%
+                height: 100%
+                position: absolute
+                background: url('../images/events/all_light_mb.jpg') top center no-repeat
+                background-size: 100%
+                mix-blend-mode: screen
+                top: initial
+                left: initial
+                z-index: 18
+                transform: translateX(0) scale(1)
+                animation: sakuraLight 6s infinite ease
+    .switch-list
+        padding: 1rem
+        ul
+            &:nth-child(1)
+                margin-right: 15px
+    .prize-box 
+        display: block
+        margin: 0 10px
+        .treasure-container
+            width: 100%
+            display: flex  
+            flex-direction: column
+            padding: 5px
+            overflow: hidden
+            .treasure-img
+                display: none
+                width: 100%
+                left: initial
+                padding: 1rem 0 2rem 2rem
+                margin: 0
+                .inner-img
+                    width: 250px
+                    position: relative
+                    margin: 0 auto
+                    left: initial
+                    top: 1rem
+                    &:nth-child(1)
+                        position: absolute
+                        left: 50%
+                        transform: translateX(-50%)
+                        animation: treasure-bling 3s infinite both
+            .text-prize
+                margin: 0
+                padding: 0
+                display: block
+                width: 100%
+                left: inherit
+                h2
+                    font-size: 14vw
+                    letter-spacing: -3px
+                h4
+                    margin: 0 0 -5px 0
+                    font-size: 2rem
+    .square 
+        margin-top: 2rem
+        h2
+            font-size: 2.2rem
+            filter: drop-shadow(0 2px 0 #090983)
+            &::before,&::after
+                +size(38px)
+                vertical-align: middle
+        .part
+            width: 100%
+            padding: 1.2rem 1rem
+    .prize-box, .chosed-game, .event
+        top: initial
+    .main
+        position: relative
+        margin: 15px 10px
+    .prize-box 
+        .treasure-img-mb
+            width: 65%
+            margin: 2rem auto 0 auto
+        .text-prize
+            padding: .5rem 0
+    .square .part 
+        .select-game
+            display: grid
+            grid-template-columns: repeat(2, 1fr)
+            p
+                margin: .5rem 0 1.5rem 0
+        .others-game 
+            padding: .25rem 0 1rem 0
+            p
+                padding: 0
+    .details
+        flex-direction: column
+        .word ul
+            li
+                line-height: 1.5
+        .decorate-img
+            display: none
+    .all_table
+        flex-direction: column
+        padding: 0
+        margin-top: .5rem
+    .table
+        padding: 0
+        &:nth-child(2)
+            margin-top: 2rem
+    .annoucement 
+        .desc
+            width: 100%
+            padding: 1rem 1.2rem
+            flex-direction: column
+            .each-annouce
+                padding: 14
+            ul
+                margin: 0
+                li
+                    margin: 1rem 0
+                    line-height: 1.7
+    .header .header-container
+        padding: .4rem
+        .logo
+            width: 75px
+            padding: 0
+    .language-pack
+        .language-icon
+            padding: .4rem .6rem
+            img
+                +size(20px)
+            .language
+                font-size: .9rem
+    .switch-list
+        top: 4.2rem
+        margin-right: 0rem
+    .top_btn
+        bottom: .8rem
+        right: .5rem
+        p
+            +size(70px)
+    .footer p
+        font-size: .7rem
+
+@media screen and ( max-width: 320px )
+    .prize-box .treasure-container 
+        .treasure-img .inner-img
+            width: 210px
+        .text-prize h4
+            font-size: 9vw
+
+    .switch-list
+        margin: .5rem
+        ul
+            li
+                &::after
+                    width: 100%
+                a
+           

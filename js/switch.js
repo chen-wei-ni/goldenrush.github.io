@@ -26,10 +26,8 @@ $('.top_btn').hide();
 			var sh = $(window).scrollTop();
 			if(sh > 150) {
 				$('.top_btn').show(500, 'swing');
-				heart.classList.add('opacityHeart');
 			}else {
 				$('.top_btn').hide(500, 'swing');
-				heart.classList.remove('opacityHeart');
 			}
 		});
 		
@@ -61,15 +59,19 @@ scaleItem.addEventListener('animationend', ()=>{
 	},3000)
 })
 
+var pig = document.querySelector('.connect-part');
+anime({
+	targets: pig,
+	scale: [0,1],
+	duration: 700,
+	delay: 500,
+	easing: 'spring(1, 80, 10, 0)',
+	complete: function () {
+        animationDone = true;
+		animateAdd();
+    }   
+  });
 
-
-let heart = document.querySelector('.glow');
-	// setTimeout(function(){
-	// 	heart.classList.add('opacityHeart')
-	// },3600)
-// document.addEventListener('scroll',function(e){
-// 	var sh = $(window).scrollTop();
-// 	if(sh>300){
-// 		heart.classList.add('opacityHeart')
-// 	}
-// })
+function animateAdd(){
+	pig.classList.add('float');
+}

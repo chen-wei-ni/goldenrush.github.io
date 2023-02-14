@@ -70,6 +70,9 @@ ul {
 
 .language-pack:hover .language-icon {
   border: 2px solid #44e993;
+  letter-spacing: 0.2em;
+  -webkit-box-shadow: 0 0 25px #44e993;
+          box-shadow: 0 0 25px #44e993;
 }
 
 .language-pack:hover .language-icon span {
@@ -83,6 +86,7 @@ ul {
   -webkit-box-pack: space-evenly;
       -ms-flex-pack: space-evenly;
           justify-content: space-evenly;
+  position: relative;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -93,6 +97,8 @@ ul {
   cursor: pointer;
   min-width: 80px;
   mix-blend-mode: difference;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
 }
 
 .language-pack .language-icon span {
@@ -203,25 +209,23 @@ ul {
 
 /*--site-main-wrapper START!--*/
 .site-main-wrapper {
-  background: radial-gradient(ellipse at 50% 50%, #ffffff 0%, #7dd8ff 100%);
-  overflow: hidden;
+  background: #023bd1;
 }
 
 .site-main-wrapper .pc-mode {
   position: relative;
   width: 100%;
   height: 44vw;
+  overflow: hidden;
 }
 
 .site-main-wrapper .pc-mode .background {
   width: 100%;
-  height: 33vw;
+  height: 35vw;
   position: absolute;
   background: url("../images/events/web1920.jpg") top center no-repeat;
-  background-size: auto 110%, auto;
+  background-size: auto 100%, auto;
   z-index: 10;
-  -webkit-animation: move-glow 8s infinite alternate both ease;
-          animation: move-glow 8s infinite alternate both ease;
 }
 
 .site-main-wrapper .pc-mode .glow {
@@ -229,19 +233,19 @@ ul {
   height: 33vw;
   background: url("../images/events/heartlight.jpg") top center no-repeat;
   mix-blend-mode: screen;
-  -webkit-animation: purple_light 3.5s ease forwards infinite;
-          animation: purple_light 3.5s ease forwards infinite;
+  -webkit-animation: purple_light 3.5s ease infinite;
+          animation: purple_light 3.5s ease infinite;
   -webkit-animation-delay: .2s;
           animation-delay: .2s;
   position: absolute;
   background-size: auto 100%, auto;
-  z-index: 29;
+  z-index: 16;
 }
 
 .site-main-wrapper .pc-mode .character {
   position: absolute;
   width: 100%;
-  height: 33vw;
+  height: 35vw;
   background: url("../images/events/character_01.png") top center no-repeat;
   background-size: auto 100%, auto;
   z-index: 17;
@@ -250,11 +254,15 @@ ul {
 .site-main-wrapper .pc-mode .connect-part {
   position: absolute;
   width: 100%;
-  height: 44vw;
-  background: url("../images/events/all_light.jpg") top center no-repeat;
+  height: 33vw;
+  background: url("../images/events/float-items.png") top center no-repeat;
   background-size: auto 100%, auto;
-  mix-blend-mode: screen;
-  z-index: 21;
+  z-index: 19;
+}
+
+.site-main-wrapper .pc-mode .float {
+  -webkit-animation: brightness 2s infinite alternate;
+          animation: brightness 2s infinite alternate;
 }
 
 .site-main-wrapper .pc-mode .treasure {
@@ -263,15 +271,25 @@ ul {
   height: 44vw;
   background: url("../images/events/connect.png") top center;
   background-size: auto 100%, auto;
+  -webkit-animation: sakura 1.5s linear forwards;
+          animation: sakura 1.5s linear forwards;
   z-index: 18;
 }
 
 .site-main-wrapper .pc-mode .ribbon {
-  position: relative;
-  width: 100%;
-  height: 33vw;
-  background-size: auto 100%, auto;
-  z-index: 18;
+  position: absolute;
+  width: 643px;
+  height: 630px;
+  background: url("../images/events/sakura.png") no-repeat;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  top: 0;
+  left: 50%;
+  -webkit-filter: drop-shadow(0 0 20px #ff70b8);
+          filter: drop-shadow(0 0 20px #ff70b8);
+  -webkit-animation: sakura_grow 1.5s infinite steps(3);
+          animation: sakura_grow 1.5s infinite steps(3);
+  z-index: 17;
 }
 
 .site-main-wrapper .pc-mode .banner-slogan-cn {
@@ -325,21 +343,21 @@ ul {
   display: grid;
   place-content: center;
   position: relative;
-  top: -12rem;
+  top: -14rem;
   z-index: 21;
 }
 
 .prize-box .treasure-container {
   width: 1170px;
   border-radius: 25px;
-  background: -webkit-gradient(linear, left top, left bottom, from(#92d7ff), color-stop(4%, #0074bd), color-stop(96%, #00c4ff), to(#00dcff));
-  background: linear-gradient(180deg, #92d7ff 0%, #0074bd 4%, #00c4ff 96%, #00dcff 100%);
-  border-top: 2px solid #00b3ff;
-  border-right: 3px solid #00b3ff;
-  border-left: 3px solid #00b3ff;
-  border-bottom: 1px solid #00b3ff;
-  -webkit-box-shadow: 0px 15px #4d7dbb;
-          box-shadow: 0px 15px #4d7dbb;
+  background: -webkit-gradient(linear, left top, left bottom, from(#92d7ff), color-stop(4%, #0400f6), color-stop(96%, #00d0ff), to(#e8fcff));
+  background: linear-gradient(180deg, #92d7ff 0%, #0400f6 4%, #00d0ff 96%, #e8fcff 100%);
+  border-top: 2px solid #b3fcff;
+  border-right: 3px solid #b3fcff;
+  border-left: 3px solid #b3fcff;
+  border-bottom: 1px solid #b3fcff;
+  -webkit-box-shadow: 0px 15px #1896df;
+          box-shadow: 0px 15px #1896df;
 }
 
 .prize-box .treasure-container::after {
@@ -420,7 +438,7 @@ ul {
 
 /*-- 指定遊戲--*/
 .chosed-game {
-  top: -9rem;
+  top: -10rem;
 }
 
 .square {
@@ -434,16 +452,16 @@ ul {
 
 .square h2 {
   text-align: center;
-  background: -webkit-gradient(linear, left top, left bottom, from(#ffffff), to(#00d5ff));
-  background: linear-gradient(to bottom, #ffffff, #00d5ff);
+  background: -webkit-gradient(linear, left top, left bottom, from(#ffffff), to(#ffc800));
+  background: linear-gradient(to bottom, #ffffff, #ffc800);
   color: transparent;
   background-clip: text;
   -webkit-background-clip: text;
   -moz-background-clip: text;
   -o-background-clip: text;
-  -webkit-filter: drop-shadow(0px 5px 0px #090983);
-          filter: drop-shadow(0px 5px 0px #090983);
-  -webkit-text-stroke: 1px #090983;
+  -webkit-filter: drop-shadow(0px 5px 0px #3d1b2f);
+          filter: drop-shadow(0px 5px 0px #3d1b2f);
+  -webkit-text-stroke: 1px #3d1b2f;
   font-size: 3.8rem;
   margin: 0 0 1rem 0;
   position: relative;
@@ -452,15 +470,15 @@ ul {
 .square .part {
   width: 1170px;
   border-radius: 25px;
-  background: -webkit-gradient(linear, left top, left bottom, from(#92d7ff), color-stop(4%, #005ebd), color-stop(96%, #00c4ff), to(#00dcff));
-  background: linear-gradient(180deg, #92d7ff 0%, #005ebd 4%, #00c4ff 96%, #00dcff 100%);
+  background: -webkit-gradient(linear, left top, left bottom, from(#92d7ff), color-stop(4%, #0400f6), color-stop(96%, #00c4ff), to(#e8fcff));
+  background: linear-gradient(180deg, #92d7ff 0%, #0400f6 4%, #00c4ff 96%, #e8fcff 100%);
   padding: 2.5rem 1.8rem;
-  border-top: 2px solid #00b3ff;
-  border-right: 3px solid #00b3ff;
-  border-left: 3px solid #00b3ff;
-  border-bottom: 1px solid #00b3ff;
-  -webkit-box-shadow: 0px 15px #4d7dbb  , inset 0px 0px 7px 3px #aaf9ff;
-          box-shadow: 0px 15px #4d7dbb  , inset 0px 0px 7px 3px #aaf9ff;
+  border-top: 2px solid #b3fcff;
+  border-right: 3px solid #b3fcff;
+  border-left: 3px solid #b3fcff;
+  border-bottom: 1px solid #b3fcff;
+  -webkit-box-shadow: 0px 15px #1896df   , inset 0px 0px 7px 3px #cbfcff;
+          box-shadow: 0px 15px #1896df   , inset 0px 0px 7px 3px #cbfcff;
 }
 
 .square .part .select-game {
@@ -484,10 +502,10 @@ ul {
 }
 
 .square .part .select-game .each-game a:hover .pic {
-  -webkit-filter: contrast(120%) brightness(120%) drop-shadow(1px 1px 10px rgba(69, 0, 67, 0.8));
-          filter: contrast(120%) brightness(120%) drop-shadow(1px 1px 10px rgba(69, 0, 67, 0.8));
-  -webkit-transform: translateY(-10px);
-          transform: translateY(-10px);
+  -webkit-filter: brightness(120%) drop-shadow(1px 1px 10px rgba(69, 0, 67, 0.8));
+          filter: brightness(120%) drop-shadow(1px 1px 10px rgba(69, 0, 67, 0.8));
+  -webkit-transform: translateY(-10px) scale(0.95);
+          transform: translateY(-10px) scale(0.95);
   -webkit-transition: .3s;
   transition: .3s;
 }
@@ -573,12 +591,12 @@ ul {
 }
 
 .details .word ul li span {
-  color: #00f7ff;
+  color: #ffea00;
   font-weight: 800;
 }
 
 .details .word ul li strong {
-  color: #00f7ff;
+  color: #ffea00;
 }
 
 .details ol {
@@ -594,7 +612,7 @@ ul {
   content: '\25CB';
   width: 5px;
   height: 5px;
-  color: #00f7ff;
+  color: #ffea00;
   display: inline-block;
   margin-right: 0.5rem;
 }
@@ -667,14 +685,14 @@ ul {
 }
 
 .all_table .table ul .colored span:nth-child(1) {
-  background: -webkit-gradient(linear, left top, left bottom, from(#ffceff), color-stop(90%, #00e1ff), to(transparent));
-  background: linear-gradient(180deg, #ffceff 0%, #00e1ff 90%, transparent 100%);
+  background: -webkit-gradient(linear, left top, left bottom, from(#c2faff), color-stop(90%, #14b5ff), to(transparent));
+  background: linear-gradient(180deg, #c2faff 0%, #14b5ff 90%, transparent 100%);
   border-radius: 20px 20px 0 0;
 }
 
 .all_table .table ul .colored span:nth-child(2) {
-  background: -webkit-gradient(linear, left top, left bottom, from(#ffceff), color-stop(90%, #00e1ff), to(transparent));
-  background: linear-gradient(180deg, #ffceff 0%, #00e1ff 90%, transparent 100%);
+  background: -webkit-gradient(linear, left top, left bottom, from(#c2faff), color-stop(90%, #14b5ff), to(transparent));
+  background: linear-gradient(180deg, #c2faff 0%, #14b5ff 90%, transparent 100%);
   border-radius: 20px 20px 0 0;
 }
 
@@ -689,7 +707,7 @@ ul {
 
 .annoucement .desc {
   width: 1170px;
-  color: #0267b5;
+  color: #dbefff;
   padding: 0 3rem 5rem 3rem;
 }
 
@@ -698,7 +716,7 @@ ul {
   font-size: 1.4rem;
   letter-spacing: 2px;
   font-weight: bold;
-  color: #0267b5;
+  color: #dbefff;
 }
 
 .annoucement .desc .each-annouce {
@@ -712,7 +730,7 @@ ul {
 
 /*-- footer--*/
 .footer {
-  background: #ffffff2e;
+  background: #0000002c;
   width: 100%;
   height: 100px;
   background-size: cover;
@@ -728,7 +746,7 @@ ul {
 }
 
 .footer p {
-  color: #013f6e79;
+  color: #0091ff92;
   font-size: 1rem;
   letter-spacing: 1px;
   text-align: center;
@@ -776,37 +794,34 @@ ul {
 }
 
 /*--switch another mode --*/
-@media screen and (max-width: 1600px) {
+@media screen and (max-width: 1680px) {
   .site-main-wrapper .pc-mode {
-    height: 735px;
-  }
-  .site-main-wrapper .pc-mode .connect-part {
     height: 735px;
   }
   .site-main-wrapper .pc-mode .treasure {
     height: 735px;
   }
-  .site-main-wrapper .pc-mode .background, .site-main-wrapper .pc-mode .glow, .site-main-wrapper .pc-mode .character, .site-main-wrapper .pc-mode .character-right, .site-main-wrapper .pc-mode .character .handR, .site-main-wrapper .pc-mode .character .handL, .site-main-wrapper .pc-mode .mask, .site-main-wrapper .pc-mode .ribbon, .site-main-wrapper .pc-mode .banner-slogan-cn, .site-main-wrapper .pc-mode .banner-slogan-en, .site-main-wrapper .pc-mode .banner-slogan-id, .site-main-wrapper .pc-mode .banner-slogan-jp, .site-main-wrapper .pc-mode .banner-slogan-kr, .site-main-wrapper .pc-mode .banner-slogan-th, .site-main-wrapper .pc-mode .banner-slogan-tw, .site-main-wrapper .pc-mode .banner-slogan-vn {
+  .site-main-wrapper .pc-mode .connect-part, .site-main-wrapper .pc-mode .background, .site-main-wrapper .pc-mode .glow, .site-main-wrapper .pc-mode .character, .site-main-wrapper .pc-mode .character-right, .site-main-wrapper .pc-mode .character .handR, .site-main-wrapper .pc-mode .character .handL, .site-main-wrapper .pc-mode .mask, .site-main-wrapper .pc-mode .ribbon {
     height: 572px;
+  }
+  .site-main-wrapper .pc-mode .banner-slogan-cn, .site-main-wrapper .pc-mode .banner-slogan-en, .site-main-wrapper .pc-mode .banner-slogan-id, .site-main-wrapper .pc-mode .banner-slogan-jp, .site-main-wrapper .pc-mode .banner-slogan-kr, .site-main-wrapper .pc-mode .banner-slogan-th, .site-main-wrapper .pc-mode .banner-slogan-tw, .site-main-wrapper .pc-mode .banner-slogan-vn {
+    height: 550px;
   }
 }
 
 @media screen and (max-width: 1400px) {
   .site-main-wrapper .pc-mode {
-    height: 735px;
-  }
-  .site-main-wrapper .pc-mode .connect-part {
-    height: 700px;
+    height: 720px;
   }
   .site-main-wrapper .pc-mode .treasure {
     height: 700px;
   }
-  .site-main-wrapper .pc-mode .background {
-    -webkit-animation: move-glow 12s infinite alternate both ease;
-            animation: move-glow 12s infinite alternate both ease;
-  }
-  .site-main-wrapper .pc-mode .background, .site-main-wrapper .pc-mode .glow, .site-main-wrapper .pc-mode .character, .site-main-wrapper .pc-mode .character-right, .site-main-wrapper .pc-mode .character .handR, .site-main-wrapper .pc-mode .character .handL, .site-main-wrapper .pc-mode .mask, .site-main-wrapper .pc-mode .ribbon, .site-main-wrapper .pc-mode .banner-slogan-cn, .site-main-wrapper .pc-mode .banner-slogan-en, .site-main-wrapper .pc-mode .banner-slogan-id, .site-main-wrapper .pc-mode .banner-slogan-jp, .site-main-wrapper .pc-mode .banner-slogan-kr, .site-main-wrapper .pc-mode .banner-slogan-th, .site-main-wrapper .pc-mode .banner-slogan-tw, .site-main-wrapper .pc-mode .banner-slogan-vn {
+  .site-main-wrapper .pc-mode .connect-part, .site-main-wrapper .pc-mode .background, .site-main-wrapper .pc-mode .glow, .site-main-wrapper .pc-mode .character, .site-main-wrapper .pc-mode .character-right, .site-main-wrapper .pc-mode .character .handR, .site-main-wrapper .pc-mode .character .handL, .site-main-wrapper .pc-mode .mask, .site-main-wrapper .pc-mode .ribbon, .site-main-wrapper .pc-mode .banner-slogan-cn, .site-main-wrapper .pc-mode .banner-slogan-en, .site-main-wrapper .pc-mode .banner-slogan-id, .site-main-wrapper .pc-mode .banner-slogan-jp, .site-main-wrapper .pc-mode .banner-slogan-kr, .site-main-wrapper .pc-mode .banner-slogan-th, .site-main-wrapper .pc-mode .banner-slogan-tw, .site-main-wrapper .pc-mode .banner-slogan-vn {
     height: 535px;
+  }
+  .site-main-wrapper .pc-mode .ribbon {
+    -webkit-transform: translateX(-50%) scale(0.88);
+            transform: translateX(-50%) scale(0.88);
   }
 }
 
@@ -814,17 +829,14 @@ ul {
   .site-main-wrapper .pc-mode {
     height: 570px;
   }
-  .site-main-wrapper .pc-mode .connect-part {
-    height: 570px;
-  }
   .site-main-wrapper .pc-mode .treasure {
     height: 600px;
   }
-  .site-main-wrapper .pc-mode .background, .site-main-wrapper .pc-mode .glow, .site-main-wrapper .pc-mode .character, .site-main-wrapper .pc-mode .character-right, .site-main-wrapper .pc-mode .character .handR, .site-main-wrapper .pc-mode .character .handL, .site-main-wrapper .pc-mode .mask, .site-main-wrapper .pc-mode .ribbon, .site-main-wrapper .pc-mode .banner-slogan-cn, .site-main-wrapper .pc-mode .banner-slogan-en, .site-main-wrapper .pc-mode .banner-slogan-id, .site-main-wrapper .pc-mode .banner-slogan-jp, .site-main-wrapper .pc-mode .banner-slogan-kr, .site-main-wrapper .pc-mode .banner-slogan-th, .site-main-wrapper .pc-mode .banner-slogan-tw, .site-main-wrapper .pc-mode .banner-slogan-vn {
-    height: 458px;
+  .site-main-wrapper .pc-mode .connect-part, .site-main-wrapper .pc-mode .background, .site-main-wrapper .pc-mode .glow, .site-main-wrapper .pc-mode .character, .site-main-wrapper .pc-mode .character-right, .site-main-wrapper .pc-mode .character .handR, .site-main-wrapper .pc-mode .character .handL, .site-main-wrapper .pc-mode .mask, .site-main-wrapper .pc-mode .banner-slogan-cn, .site-main-wrapper .pc-mode .banner-slogan-en, .site-main-wrapper .pc-mode .banner-slogan-id, .site-main-wrapper .pc-mode .banner-slogan-jp, .site-main-wrapper .pc-mode .banner-slogan-kr, .site-main-wrapper .pc-mode .banner-slogan-th, .site-main-wrapper .pc-mode .banner-slogan-tw, .site-main-wrapper .pc-mode .banner-slogan-vn {
+    height: 490px;
   }
-  .site-main-wrapper .pc-mode .bnTitle {
-    top: 10px;
+  .site-main-wrapper .pc-mode .ribbon {
+    height: 630px;
   }
   .prize-box {
     top: -7rem;
@@ -858,15 +870,12 @@ ul {
 
 @media screen and (max-width: 970px) {
   .site-main-wrapper .pc-mode {
-    height: 530px;
-  }
-  .site-main-wrapper .pc-mode .connect-part {
-    height: 530px;
+    height: 510px;
   }
   .site-main-wrapper .pc-mode .treasure {
     height: 530px;
   }
-  .site-main-wrapper .pc-mode .background, .site-main-wrapper .pc-mode .glow, .site-main-wrapper .pc-mode .character, .site-main-wrapper .pc-mode .character-right, .site-main-wrapper .pc-mode .character .handR, .site-main-wrapper .pc-mode .character .handL, .site-main-wrapper .pc-mode .mask, .site-main-wrapper .pc-mode .ribbon, .site-main-wrapper .pc-mode .banner-slogan-cn, .site-main-wrapper .pc-mode .banner-slogan-en, .site-main-wrapper .pc-mode .banner-slogan-id, .site-main-wrapper .pc-mode .banner-slogan-jp, .site-main-wrapper .pc-mode .banner-slogan-kr, .site-main-wrapper .pc-mode .banner-slogan-th, .site-main-wrapper .pc-mode .banner-slogan-tw, .site-main-wrapper .pc-mode .banner-slogan-vn {
+  .site-main-wrapper .pc-mode .connect-part, .site-main-wrapper .pc-mode .background, .site-main-wrapper .pc-mode .glow, .site-main-wrapper .pc-mode .character, .site-main-wrapper .pc-mode .character-right, .site-main-wrapper .pc-mode .character .handR, .site-main-wrapper .pc-mode .character .handL, .site-main-wrapper .pc-mode .mask, .site-main-wrapper .pc-mode .banner-slogan-cn, .site-main-wrapper .pc-mode .banner-slogan-en, .site-main-wrapper .pc-mode .banner-slogan-id, .site-main-wrapper .pc-mode .banner-slogan-jp, .site-main-wrapper .pc-mode .banner-slogan-kr, .site-main-wrapper .pc-mode .banner-slogan-th, .site-main-wrapper .pc-mode .banner-slogan-tw, .site-main-wrapper .pc-mode .banner-slogan-vn {
     height: 411px;
   }
   .prize-box {
@@ -925,13 +934,16 @@ ul {
 
 @media screen and (max-width: 840px) {
   .site-main-wrapper .pc-mode {
-    height: 475px;
+    height: 464px;
   }
-  .site-main-wrapper .pc-mode .connect-part, .site-main-wrapper .pc-mode .treasure {
-    height: 510px;
+  .site-main-wrapper .pc-mode .treasure {
+    height: 464px;
   }
-  .site-main-wrapper .pc-mode .background, .site-main-wrapper .pc-mode .glow, .site-main-wrapper .pc-mode .character, .site-main-wrapper .pc-mode .character-right, .site-main-wrapper .pc-mode .character .handR, .site-main-wrapper .pc-mode .character .handL, .site-main-wrapper .pc-mode .mask, .site-main-wrapper .pc-mode .ribbon, .site-main-wrapper .pc-mode .banner-slogan-cn, .site-main-wrapper .pc-mode .banner-slogan-en, .site-main-wrapper .pc-mode .banner-slogan-id, .site-main-wrapper .pc-mode .banner-slogan-jp, .site-main-wrapper .pc-mode .banner-slogan-kr, .site-main-wrapper .pc-mode .banner-slogan-th, .site-main-wrapper .pc-mode .banner-slogan-tw, .site-main-wrapper .pc-mode .banner-slogan-vn {
-    height: 390px;
+  .site-main-wrapper .pc-mode .connect-part, .site-main-wrapper .pc-mode .background, .site-main-wrapper .pc-mode .glow, .site-main-wrapper .pc-mode .character, .site-main-wrapper .pc-mode .character-right, .site-main-wrapper .pc-mode .character .handR, .site-main-wrapper .pc-mode .character .handL, .site-main-wrapper .pc-mode .mask, .site-main-wrapper .pc-mode .banner-slogan-cn, .site-main-wrapper .pc-mode .banner-slogan-en, .site-main-wrapper .pc-mode .banner-slogan-id, .site-main-wrapper .pc-mode .banner-slogan-jp, .site-main-wrapper .pc-mode .banner-slogan-kr, .site-main-wrapper .pc-mode .banner-slogan-th, .site-main-wrapper .pc-mode .banner-slogan-tw, .site-main-wrapper .pc-mode .banner-slogan-vn {
+    height: 411px;
+  }
+  .site-main-wrapper .pc-mode .ribbon {
+    height: 600px;
   }
   .prize-box {
     top: -5rem;
@@ -967,7 +979,7 @@ ul {
     height: 115vw;
   }
   .site-main-wrapper .pc-mode .background {
-    height: 105vw;
+    height: 115vw;
     background: url("../images/events/mobile.jpg") top center no-repeat;
     background-size: 100%;
     -webkit-animation: none;
@@ -979,9 +991,10 @@ ul {
     background-size: 100%;
     -webkit-transform-origin: 50% 60%;
             transform-origin: 50% 60%;
-    -webkit-animation: purple_light2 3.5s ease forwards;
-            animation: purple_light2 3.5s ease forwards;
-    z-index: 21;
+    -webkit-animation: purple_light2 5s ease forwards infinite;
+            animation: purple_light2 5s ease forwards infinite;
+    mix-blend-mode: screen;
+    z-index: 15;
   }
   .site-main-wrapper .pc-mode .character {
     height: 100%;
@@ -990,17 +1003,16 @@ ul {
   }
   .site-main-wrapper .pc-mode .connect-part {
     height: 100%;
-    background: url("../images/events/all_light_mb.jpg") top center no-repeat;
+    background: url("../images/events/float-items-mb.png") top center no-repeat;
     background-size: 100%;
-    z-index: 16;
+    z-index: 19;
   }
   .site-main-wrapper .pc-mode .treasure {
     height: 100%;
-    background: url("../images/events/float-items-mb.png") top center;
+    background: url("../images/events/cloud.png") top center no-repeat;
     background-size: 100%;
-    mix-blend-mode: normal;
-    -webkit-animation: brightness 2s infinite alternate;
-            animation: brightness 2s infinite alternate;
+    -webkit-animation: sakura_mb 2s;
+            animation: sakura_mb 2s;
     z-index: 19;
   }
   .site-main-wrapper .pc-mode .banner-slogan-cn {
@@ -1028,7 +1040,6 @@ ul {
     background: url("../images/events/mb_slogan-vn.png") top center no-repeat;
   }
   .site-main-wrapper .pc-mode .bnTitle {
-    top: 0;
     height: 100%;
     background-size: 100%;
   }
@@ -1036,9 +1047,16 @@ ul {
     width: 100%;
     height: 100%;
     position: absolute;
-    background: url("../images/events/cloud.png") top center no-repeat;
+    background: url("../images/events/all_light_mb.jpg") top center no-repeat;
     background-size: 100%;
+    mix-blend-mode: screen;
+    top: initial;
+    left: initial;
     z-index: 18;
+    -webkit-transform: translateX(0) scale(1);
+            transform: translateX(0) scale(1);
+    -webkit-animation: sakuraLight 6s infinite ease;
+            animation: sakuraLight 6s infinite ease;
   }
   .switch-list {
     padding: 1rem;
