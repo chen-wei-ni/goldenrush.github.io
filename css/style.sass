@@ -56,8 +56,7 @@ ul
         .language-icon
             border: 2px solid #44e993
             letter-spacing: 0.2em
-            box-shadow: 0 0 25px #44e993
-            
+            box-shadow: 0 0 25px #44e993            
             span
                 color: #44e993
     .language-icon
@@ -95,7 +94,6 @@ ul
     margin-right: 2rem
     background: #141414fe
     padding: 1rem 1.8rem 2rem 1.8rem
-    z-index: 99
     &::before
         content: ""
         display: block
@@ -147,7 +145,7 @@ ul
                 display: none
 /*--site-main-wrapper START!--*/
 .site-main-wrapper
-    background: #023bd1
+    background: radial-gradient(ellipse at 50% 50%, #9d3c00 0%, #120000 100%)
     .pc-mode
         position: relative
         width: 100%
@@ -155,7 +153,7 @@ ul
         overflow: hidden
         .background
             width: 100%
-            height: 35vw
+            height: 34vw
             +pos()
             background: url('../images/events/web1920.jpg') top center no-repeat
             background-size: auto 100%, auto
@@ -165,9 +163,9 @@ ul
             +size(100%,33vw)
             background: url('../images/events/heartlight.jpg') top center no-repeat
             mix-blend-mode:  screen
-            animation: purple_light 3.5s ease infinite 
-            animation-delay: .2s
+            animation: purple_light 6s linear infinite 
             position: absolute
+            top: 15%
             background-size: auto 100%, auto
             z-index: 16
         .character
@@ -181,28 +179,21 @@ ul
             +size(100%,33vw)
             background: url('../images/events/float-items.png') top center no-repeat
             background-size: auto 100%, auto   
-            // animation:  brightness 2s infinite alternate    
+            animation:  brightness 2s infinite alternate    
             z-index: 19
         .float
-            animation:  brightness 2s infinite alternate  
+            animation:  pulsate-fwd2 2s infinite  
         .treasure
             +pos()
-            +size(100%,44vw)
+            +size(100%,39vw)
             background: url('../images/events/connect.png') top center 
             background-size: auto 100%, auto 
-            animation: sakura 1.5s linear forwards
+            // animation: sakura 1s linear forwards
             z-index: 18  
         .ribbon
             position: absolute
-            +size(643px,630px)
-            background: url('../images/events/sakura.png')  no-repeat
-            transform: translateX(-50%) 
-            top: 0
-            left: 50%
-            // background-size: auto 100%, auto
-            filter: drop-shadow(0 0 20px #ff70b8)
-            animation: sakura_grow 1.5s infinite steps(3)
-            z-index: 17
+            +size(100%,33vw)
+            background-size: auto 100%, auto
         .banner-slogan-cn
             background: url('../images/events/slogan_cn.png') top center no-repeat
         .banner-slogan-en
@@ -225,7 +216,12 @@ ul
             background-size: auto 100%, auto
             z-index: 20
             opacity: 1
-        
+        #mycanvas
+            width: 100%
+            position: absolute
+            top: 0
+            height: 36vw
+            background-size: auto 100%, auto
 /** -- prize-- **/
 .main
     position: relative
@@ -245,12 +241,12 @@ ul
     .treasure-container
         width: 1170px
         border-radius: 25px
-        background: linear-gradient(180deg, #92d7ff 0%, #0400f6 4%, #00d0ff 96%, #e8fcff 100%)
-        border-top: 2px solid #b3fcff
-        border-right: 3px solid #b3fcff
-        border-left: 3px solid #b3fcff
-        border-bottom: 1px solid #b3fcff
-        box-shadow: 0px 15px #1896df 
+        background: linear-gradient(180deg, #ffcc92 0%, #c50d00 4%, #ffa22f 96%, #ffe8e8 100%)
+        border-top: 2px solid #ffe2b3
+        border-right: 3px solid #ffe2b3
+        border-left: 3px solid #ffe2b3
+        border-bottom: 1px solid #ffe2b3
+        box-shadow: 0px 15px 25px #df1818 
         &::after
             // content: url('../images/events/heart.png')
             position: absolute
@@ -320,21 +316,21 @@ ul
         -webkit-background-clip: text
         -moz-background-clip: text
         -o-background-clip: text
-        filter: drop-shadow(0px 5px 0px #3d1b2f)
-        -webkit-text-stroke: 1px #3d1b2f
+        filter: drop-shadow(0px 5px 0px #3d1b20)
+        // -webkit-text-stroke: 1px #3d1b2f
         font-size: 3.8rem
         margin: 0 0 1rem 0
         position: relative
     .part
         width: 1170px
         border-radius: 25px
-        background: linear-gradient(180deg, #92d7ff 0%, #0400f6 4%, #00c4ff 96%, #e8fcff 100%)
+        background: linear-gradient(180deg, #ffcc92 0%, #b00000 4%, #fc971c 96%, #ffe8e8 100%)
         padding: 2.5rem 1.8rem
-        border-top: 2px solid #b3fcff
-        border-right: 3px solid #b3fcff
-        border-left: 3px solid #b3fcff
-        border-bottom: 1px solid #b3fcff
-        box-shadow: 0px 15px #1896df   , inset 0px 0px 7px 3px #cbfcff
+        border-top: 2px solid #ffe2b3
+        border-right: 3px solid #ffe2b3
+        border-left: 3px solid #ffe2b3
+        border-bottom: 1px solid #ffe2b3
+        box-shadow: 0px 15px 25px #df1818    , inset 0px 0px 7px 3px #ffe2d6
         .select-game
             display: flex
             padding-top: 2rem
@@ -377,7 +373,7 @@ ul
             .line
                 width: 100%
                 height: 1.5px
-                background: linear-gradient(to right,transparent 5%, #88d7ff 50%, transparent 95%)
+                background: linear-gradient(to right,transparent 5%, #ffcb88 50%, transparent 95%)
 /*--活動細節--*/
 .event
     top: -6rem
@@ -449,11 +445,11 @@ ul
                     font-weight: bold
                     text-shadow: 1px 1px 3px rgba(#000,0.5)
                     &:nth-child(1)
-                        background: linear-gradient(180deg, #c2faff 0%, #14b5ff 90%, transparent 100%)
+                        background: linear-gradient(180deg, #fbff00 0%, #ff9200 90%, transparent 100%)
                         border-radius: 20px 20px 0 0
 
                     &:nth-child(2)
-                        background: linear-gradient(180deg, #c2faff 0%, #14b5ff 90%, transparent 100%)
+                        background: linear-gradient(180deg, #fbff00 0%, #ff9200 90%, transparent 100%)
                         border-radius: 20px 20px 0 0
                     
 .annoucement
@@ -462,14 +458,14 @@ ul
     justify-content: center
     .desc
         width: 1170px      
-        color: rgba(#dbefff,1)
+        color: rgba(#ffdbdb,1)
         padding: 0 3rem 5rem 3rem
         .title
             margin-top: .8rem
             font-size: 1.4rem
             letter-spacing: 2px
             font-weight: bold
-            color: #dbefff
+            color: #ffdbdb
         .each-annouce
             padding: 5px 0 0 25px
         ul
@@ -486,7 +482,7 @@ ul
     align-items: center
     justify-content: center
     p
-        color: #0091ff92
+        color: #ff770092
         font-size: 1rem
         letter-spacing: 1px
         text-align: center
@@ -497,6 +493,7 @@ ul
     right: 1rem
     cursor: pointer
     opacity: 0.6
+    z-index: 99
     &:hover
         opacity: 1
         p
@@ -520,8 +517,8 @@ ul
     .site-main-wrapper .pc-mode 
         height: 735px
         .treasure
-            height: 735px
-        .connect-part,.background, .glow, .character, .character-right, .character .handR, .character .handL,.mask,  .ribbon, 
+            height: 680px
+        .connect-part,.background, .glow, .character, .character-right, .character .handR, .character .handL,.mask,  .ribbon, .ribbon .flower1, .ribbon .flower2
             height: 572px
         .banner-slogan-cn, .banner-slogan-en, .banner-slogan-id, .banner-slogan-jp, .banner-slogan-kr, .banner-slogan-th, .banner-slogan-tw, .banner-slogan-vn,
             height: 550px
@@ -530,21 +527,21 @@ ul
     .site-main-wrapper .pc-mode 
         height: 720px
         .treasure
-            height: 700px
-        .connect-part,.background, .glow, .character, .character-right, .character .handR, .character .handL,.mask,  .ribbon, .banner-slogan-cn, .banner-slogan-en, .banner-slogan-id, .banner-slogan-jp, .banner-slogan-kr, .banner-slogan-th, .banner-slogan-tw, .banner-slogan-vn, 
+            // height: 700px
+        .connect-part,.background, .glow, .character, .character-right, .character .handR, .character .handL,.mask,  .ribbon, .banner-slogan-cn, .banner-slogan-en, .banner-slogan-id, .banner-slogan-jp, .banner-slogan-kr, .banner-slogan-th, .banner-slogan-tw, .banner-slogan-vn, .ribbon .flower1, .ribbon .flower2
             height: 535px
-        .ribbon
-            transform: translateX(-50%) scale(0.88)
+        #mycanvas
+            height: 43vw
+
 @media screen and ( max-width: 1200px )
     .site-main-wrapper .pc-mode 
         height: 570px
         .treasure
-            height: 600px
-        .connect-part,.background, .glow, .character, .character-right, .character .handR, .character .handL, .mask,  .banner-slogan-cn, .banner-slogan-en, .banner-slogan-id, .banner-slogan-jp, .banner-slogan-kr, .banner-slogan-th, .banner-slogan-tw, .banner-slogan-vn, 
+            height: 568px
+        .connect-part,.background, .glow, .character, .character-right, .character .handR, .character .handL, .mask,  .banner-slogan-cn, .banner-slogan-en, .banner-slogan-id, .banner-slogan-jp, .banner-slogan-kr, .banner-slogan-th, .banner-slogan-tw, .banner-slogan-vn,.ribbon, .ribbon .flower1, .ribbon .flower2
             height: 490px
-        .ribbon
-            height: 630px
-            
+        #mycanvas
+            height: 50vw 
     .prize-box
         top: -7rem
         .treasure-container
@@ -570,10 +567,9 @@ ul
     .site-main-wrapper .pc-mode 
         height: 510px
         .treasure
-            height: 530px
-        .connect-part,.background, .glow, .character, .character-right, .character .handR, .character .handL, .mask,  .banner-slogan-cn, .banner-slogan-en, .banner-slogan-id, .banner-slogan-jp, .banner-slogan-kr, .banner-slogan-th, .banner-slogan-tw, .banner-slogan-vn, 
+            height: 490px
+        .connect-part,.background, .glow, .character, .character-right, .character .handR, .character .handL, .mask,  .banner-slogan-cn, .banner-slogan-en, .banner-slogan-id, .banner-slogan-jp, .banner-slogan-kr, .banner-slogan-th, .banner-slogan-tw, .banner-slogan-vn, .ribbon .flower1, .ribbon .flower2
             height: 411px
-
     .prize-box
         top: -8rem
     .prize-box .treasure-container
@@ -613,10 +609,9 @@ ul
         height: 464px
         .treasure
             height: 464px
-        .connect-part,.background, .glow, .character, .character-right, .character .handR, .character .handL, .mask,  .banner-slogan-cn, .banner-slogan-en, .banner-slogan-id, .banner-slogan-jp, .banner-slogan-kr, .banner-slogan-th, .banner-slogan-tw, .banner-slogan-vn, 
-            height: 411px
-        .ribbon
-            height: 600px
+        .connect-part,.background, .glow, .character, .character-right, .character .handR, .character .handL, .mask,  .banner-slogan-cn, .banner-slogan-en, .banner-slogan-id, .banner-slogan-jp, .banner-slogan-kr, .banner-slogan-th, .banner-slogan-tw, .banner-slogan-vn, .ribbon .flower1, .ribbon .flower2
+            height: 400px
+
     .prize-box
         top: -5rem
     .prize-box .treasure-container
@@ -635,28 +630,32 @@ ul
     .event
         top: -1rem
 @media screen and ( max-width: 760px )
+    #mycanvas
+        height: 600px
     .site-main-wrapper 
         height: 100%
         .pc-mode
             position: relative
-            +size(100%,115vw)
+            +size(100%,113vw)
             .background
-                height: 115vw
+                height: 107vw
                 background: url('../images/events/mobile.jpg') top center no-repeat
                 background-size: 100% 
                 animation: none
             .glow
                 height: 100%
-                background: url('../images/events/light_mb.jpg') top center no-repeat
+                // background: url('../images/events/light_mb.jpg') top center no-repeat
                 background-size: 100%
-                transform-origin: 50% 60%
-                animation: purple_light2 5s ease forwards infinite
-                mix-blend-mode: screen
+                // transform-origin: 50% 60%
+                top: 0
+                animation: purple_light2 6s linear infinite 
                 z-index: 15
             .character
                 height: 100%
                 background: url('../images/events/mb_character.png') top center no-repeat
                 background-size: 100%
+                animation: showUp 1s both
+                animation-delay: 300ms
             .connect-part
                 height: 100%
                 background: url('../images/events/float-items-mb.png') top center no-repeat
@@ -664,9 +663,9 @@ ul
                 z-index: 19
             .treasure
                 height: 100%
-                background: url('../images/events/cloud.png') top center no-repeat
+                background: url('../images/events/connect_mb.png') top center no-repeat
                 background-size: 100%
-                animation: sakura_mb 2s 
+                // animation: sakura_mb 2s 
                 z-index: 19
             .banner-slogan-cn
                 background: url('../images/events/mb_slogan-cn.png') top center no-repeat
@@ -687,18 +686,15 @@ ul
             .bnTitle
                 height: 100% 
                 background-size: 100%
+                transform-origin: 50% 70%
             .ribbon
                 width: 100%
                 height: 100%
                 position: absolute
-                background: url('../images/events/all_light_mb.jpg') top center no-repeat
-                background-size: 100%
-                mix-blend-mode: screen
-                top: initial
-                left: initial
-                z-index: 18
-                transform: translateX(0) scale(1)
-                animation: sakuraLight 6s infinite ease
+            #mycanvas
+                // width: 780px
+                height: 105vw                
+
     .switch-list
         padding: 1rem
         ul

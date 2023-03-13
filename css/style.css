@@ -132,7 +132,6 @@ ul {
   margin-right: 2rem;
   background: #141414fe;
   padding: 1rem 1.8rem 2rem 1.8rem;
-  z-index: 99;
 }
 
 .switch-list::before {
@@ -209,7 +208,7 @@ ul {
 
 /*--site-main-wrapper START!--*/
 .site-main-wrapper {
-  background: #023bd1;
+  background: radial-gradient(ellipse at 50% 50%, #9d3c00 0%, #120000 100%);
 }
 
 .site-main-wrapper .pc-mode {
@@ -221,7 +220,7 @@ ul {
 
 .site-main-wrapper .pc-mode .background {
   width: 100%;
-  height: 35vw;
+  height: 34vw;
   position: absolute;
   background: url("../images/events/web1920.jpg") top center no-repeat;
   background-size: auto 100%, auto;
@@ -233,11 +232,10 @@ ul {
   height: 33vw;
   background: url("../images/events/heartlight.jpg") top center no-repeat;
   mix-blend-mode: screen;
-  -webkit-animation: purple_light 3.5s ease infinite;
-          animation: purple_light 3.5s ease infinite;
-  -webkit-animation-delay: .2s;
-          animation-delay: .2s;
+  -webkit-animation: purple_light 6s linear infinite;
+          animation: purple_light 6s linear infinite;
   position: absolute;
+  top: 15%;
   background-size: auto 100%, auto;
   z-index: 16;
 }
@@ -257,39 +255,30 @@ ul {
   height: 33vw;
   background: url("../images/events/float-items.png") top center no-repeat;
   background-size: auto 100%, auto;
+  -webkit-animation: brightness 2s infinite alternate;
+          animation: brightness 2s infinite alternate;
   z-index: 19;
 }
 
 .site-main-wrapper .pc-mode .float {
-  -webkit-animation: brightness 2s infinite alternate;
-          animation: brightness 2s infinite alternate;
+  -webkit-animation: pulsate-fwd2 2s infinite;
+          animation: pulsate-fwd2 2s infinite;
 }
 
 .site-main-wrapper .pc-mode .treasure {
   position: absolute;
   width: 100%;
-  height: 44vw;
+  height: 39vw;
   background: url("../images/events/connect.png") top center;
   background-size: auto 100%, auto;
-  -webkit-animation: sakura 1.5s linear forwards;
-          animation: sakura 1.5s linear forwards;
   z-index: 18;
 }
 
 .site-main-wrapper .pc-mode .ribbon {
   position: absolute;
-  width: 643px;
-  height: 630px;
-  background: url("../images/events/sakura.png") no-repeat;
-  -webkit-transform: translateX(-50%);
-          transform: translateX(-50%);
-  top: 0;
-  left: 50%;
-  -webkit-filter: drop-shadow(0 0 20px #ff70b8);
-          filter: drop-shadow(0 0 20px #ff70b8);
-  -webkit-animation: sakura_grow 1.5s infinite steps(3);
-          animation: sakura_grow 1.5s infinite steps(3);
-  z-index: 17;
+  width: 100%;
+  height: 33vw;
+  background-size: auto 100%, auto;
 }
 
 .site-main-wrapper .pc-mode .banner-slogan-cn {
@@ -333,6 +322,14 @@ ul {
   opacity: 1;
 }
 
+.site-main-wrapper .pc-mode #mycanvas {
+  width: 100%;
+  position: absolute;
+  top: 0;
+  height: 36vw;
+  background-size: auto 100%, auto;
+}
+
 /** -- prize-- **/
 .main {
   position: relative;
@@ -350,14 +347,14 @@ ul {
 .prize-box .treasure-container {
   width: 1170px;
   border-radius: 25px;
-  background: -webkit-gradient(linear, left top, left bottom, from(#92d7ff), color-stop(4%, #0400f6), color-stop(96%, #00d0ff), to(#e8fcff));
-  background: linear-gradient(180deg, #92d7ff 0%, #0400f6 4%, #00d0ff 96%, #e8fcff 100%);
-  border-top: 2px solid #b3fcff;
-  border-right: 3px solid #b3fcff;
-  border-left: 3px solid #b3fcff;
-  border-bottom: 1px solid #b3fcff;
-  -webkit-box-shadow: 0px 15px #1896df;
-          box-shadow: 0px 15px #1896df;
+  background: -webkit-gradient(linear, left top, left bottom, from(#ffcc92), color-stop(4%, #c50d00), color-stop(96%, #ffa22f), to(#ffe8e8));
+  background: linear-gradient(180deg, #ffcc92 0%, #c50d00 4%, #ffa22f 96%, #ffe8e8 100%);
+  border-top: 2px solid #ffe2b3;
+  border-right: 3px solid #ffe2b3;
+  border-left: 3px solid #ffe2b3;
+  border-bottom: 1px solid #ffe2b3;
+  -webkit-box-shadow: 0px 15px 25px #df1818;
+          box-shadow: 0px 15px 25px #df1818;
 }
 
 .prize-box .treasure-container::after {
@@ -459,9 +456,8 @@ ul {
   -webkit-background-clip: text;
   -moz-background-clip: text;
   -o-background-clip: text;
-  -webkit-filter: drop-shadow(0px 5px 0px #3d1b2f);
-          filter: drop-shadow(0px 5px 0px #3d1b2f);
-  -webkit-text-stroke: 1px #3d1b2f;
+  -webkit-filter: drop-shadow(0px 5px 0px #3d1b20);
+          filter: drop-shadow(0px 5px 0px #3d1b20);
   font-size: 3.8rem;
   margin: 0 0 1rem 0;
   position: relative;
@@ -470,15 +466,15 @@ ul {
 .square .part {
   width: 1170px;
   border-radius: 25px;
-  background: -webkit-gradient(linear, left top, left bottom, from(#92d7ff), color-stop(4%, #0400f6), color-stop(96%, #00c4ff), to(#e8fcff));
-  background: linear-gradient(180deg, #92d7ff 0%, #0400f6 4%, #00c4ff 96%, #e8fcff 100%);
+  background: -webkit-gradient(linear, left top, left bottom, from(#ffcc92), color-stop(4%, #b00000), color-stop(96%, #fc971c), to(#ffe8e8));
+  background: linear-gradient(180deg, #ffcc92 0%, #b00000 4%, #fc971c 96%, #ffe8e8 100%);
   padding: 2.5rem 1.8rem;
-  border-top: 2px solid #b3fcff;
-  border-right: 3px solid #b3fcff;
-  border-left: 3px solid #b3fcff;
-  border-bottom: 1px solid #b3fcff;
-  -webkit-box-shadow: 0px 15px #1896df   , inset 0px 0px 7px 3px #cbfcff;
-          box-shadow: 0px 15px #1896df   , inset 0px 0px 7px 3px #cbfcff;
+  border-top: 2px solid #ffe2b3;
+  border-right: 3px solid #ffe2b3;
+  border-left: 3px solid #ffe2b3;
+  border-bottom: 1px solid #ffe2b3;
+  -webkit-box-shadow: 0px 15px 25px #df1818    , inset 0px 0px 7px 3px #ffe2d6;
+          box-shadow: 0px 15px 25px #df1818    , inset 0px 0px 7px 3px #ffe2d6;
 }
 
 .square .part .select-game {
@@ -556,8 +552,8 @@ ul {
 .square .part .others-game .line {
   width: 100%;
   height: 1.5px;
-  background: -webkit-gradient(linear, left top, right top, color-stop(5%, transparent), color-stop(50%, #88d7ff), color-stop(95%, transparent));
-  background: linear-gradient(to right, transparent 5%, #88d7ff 50%, transparent 95%);
+  background: -webkit-gradient(linear, left top, right top, color-stop(5%, transparent), color-stop(50%, #ffcb88), color-stop(95%, transparent));
+  background: linear-gradient(to right, transparent 5%, #ffcb88 50%, transparent 95%);
 }
 
 /*--活動細節--*/
@@ -685,14 +681,14 @@ ul {
 }
 
 .all_table .table ul .colored span:nth-child(1) {
-  background: -webkit-gradient(linear, left top, left bottom, from(#c2faff), color-stop(90%, #14b5ff), to(transparent));
-  background: linear-gradient(180deg, #c2faff 0%, #14b5ff 90%, transparent 100%);
+  background: -webkit-gradient(linear, left top, left bottom, from(#fbff00), color-stop(90%, #ff9200), to(transparent));
+  background: linear-gradient(180deg, #fbff00 0%, #ff9200 90%, transparent 100%);
   border-radius: 20px 20px 0 0;
 }
 
 .all_table .table ul .colored span:nth-child(2) {
-  background: -webkit-gradient(linear, left top, left bottom, from(#c2faff), color-stop(90%, #14b5ff), to(transparent));
-  background: linear-gradient(180deg, #c2faff 0%, #14b5ff 90%, transparent 100%);
+  background: -webkit-gradient(linear, left top, left bottom, from(#fbff00), color-stop(90%, #ff9200), to(transparent));
+  background: linear-gradient(180deg, #fbff00 0%, #ff9200 90%, transparent 100%);
   border-radius: 20px 20px 0 0;
 }
 
@@ -707,7 +703,7 @@ ul {
 
 .annoucement .desc {
   width: 1170px;
-  color: #dbefff;
+  color: #ffdbdb;
   padding: 0 3rem 5rem 3rem;
 }
 
@@ -716,7 +712,7 @@ ul {
   font-size: 1.4rem;
   letter-spacing: 2px;
   font-weight: bold;
-  color: #dbefff;
+  color: #ffdbdb;
 }
 
 .annoucement .desc .each-annouce {
@@ -746,7 +742,7 @@ ul {
 }
 
 .footer p {
-  color: #0091ff92;
+  color: #ff770092;
   font-size: 1rem;
   letter-spacing: 1px;
   text-align: center;
@@ -758,6 +754,7 @@ ul {
   right: 1rem;
   cursor: pointer;
   opacity: 0.6;
+  z-index: 99;
 }
 
 .top_btn:hover {
@@ -799,9 +796,9 @@ ul {
     height: 735px;
   }
   .site-main-wrapper .pc-mode .treasure {
-    height: 735px;
+    height: 680px;
   }
-  .site-main-wrapper .pc-mode .connect-part, .site-main-wrapper .pc-mode .background, .site-main-wrapper .pc-mode .glow, .site-main-wrapper .pc-mode .character, .site-main-wrapper .pc-mode .character-right, .site-main-wrapper .pc-mode .character .handR, .site-main-wrapper .pc-mode .character .handL, .site-main-wrapper .pc-mode .mask, .site-main-wrapper .pc-mode .ribbon {
+  .site-main-wrapper .pc-mode .connect-part, .site-main-wrapper .pc-mode .background, .site-main-wrapper .pc-mode .glow, .site-main-wrapper .pc-mode .character, .site-main-wrapper .pc-mode .character-right, .site-main-wrapper .pc-mode .character .handR, .site-main-wrapper .pc-mode .character .handL, .site-main-wrapper .pc-mode .mask, .site-main-wrapper .pc-mode .ribbon, .site-main-wrapper .pc-mode .ribbon .flower1, .site-main-wrapper .pc-mode .ribbon .flower2 {
     height: 572px;
   }
   .site-main-wrapper .pc-mode .banner-slogan-cn, .site-main-wrapper .pc-mode .banner-slogan-en, .site-main-wrapper .pc-mode .banner-slogan-id, .site-main-wrapper .pc-mode .banner-slogan-jp, .site-main-wrapper .pc-mode .banner-slogan-kr, .site-main-wrapper .pc-mode .banner-slogan-th, .site-main-wrapper .pc-mode .banner-slogan-tw, .site-main-wrapper .pc-mode .banner-slogan-vn {
@@ -813,15 +810,11 @@ ul {
   .site-main-wrapper .pc-mode {
     height: 720px;
   }
-  .site-main-wrapper .pc-mode .treasure {
-    height: 700px;
-  }
-  .site-main-wrapper .pc-mode .connect-part, .site-main-wrapper .pc-mode .background, .site-main-wrapper .pc-mode .glow, .site-main-wrapper .pc-mode .character, .site-main-wrapper .pc-mode .character-right, .site-main-wrapper .pc-mode .character .handR, .site-main-wrapper .pc-mode .character .handL, .site-main-wrapper .pc-mode .mask, .site-main-wrapper .pc-mode .ribbon, .site-main-wrapper .pc-mode .banner-slogan-cn, .site-main-wrapper .pc-mode .banner-slogan-en, .site-main-wrapper .pc-mode .banner-slogan-id, .site-main-wrapper .pc-mode .banner-slogan-jp, .site-main-wrapper .pc-mode .banner-slogan-kr, .site-main-wrapper .pc-mode .banner-slogan-th, .site-main-wrapper .pc-mode .banner-slogan-tw, .site-main-wrapper .pc-mode .banner-slogan-vn {
+  .site-main-wrapper .pc-mode .connect-part, .site-main-wrapper .pc-mode .background, .site-main-wrapper .pc-mode .glow, .site-main-wrapper .pc-mode .character, .site-main-wrapper .pc-mode .character-right, .site-main-wrapper .pc-mode .character .handR, .site-main-wrapper .pc-mode .character .handL, .site-main-wrapper .pc-mode .mask, .site-main-wrapper .pc-mode .ribbon, .site-main-wrapper .pc-mode .banner-slogan-cn, .site-main-wrapper .pc-mode .banner-slogan-en, .site-main-wrapper .pc-mode .banner-slogan-id, .site-main-wrapper .pc-mode .banner-slogan-jp, .site-main-wrapper .pc-mode .banner-slogan-kr, .site-main-wrapper .pc-mode .banner-slogan-th, .site-main-wrapper .pc-mode .banner-slogan-tw, .site-main-wrapper .pc-mode .banner-slogan-vn, .site-main-wrapper .pc-mode .ribbon .flower1, .site-main-wrapper .pc-mode .ribbon .flower2 {
     height: 535px;
   }
-  .site-main-wrapper .pc-mode .ribbon {
-    -webkit-transform: translateX(-50%) scale(0.88);
-            transform: translateX(-50%) scale(0.88);
+  .site-main-wrapper .pc-mode #mycanvas {
+    height: 43vw;
   }
 }
 
@@ -830,13 +823,13 @@ ul {
     height: 570px;
   }
   .site-main-wrapper .pc-mode .treasure {
-    height: 600px;
+    height: 568px;
   }
-  .site-main-wrapper .pc-mode .connect-part, .site-main-wrapper .pc-mode .background, .site-main-wrapper .pc-mode .glow, .site-main-wrapper .pc-mode .character, .site-main-wrapper .pc-mode .character-right, .site-main-wrapper .pc-mode .character .handR, .site-main-wrapper .pc-mode .character .handL, .site-main-wrapper .pc-mode .mask, .site-main-wrapper .pc-mode .banner-slogan-cn, .site-main-wrapper .pc-mode .banner-slogan-en, .site-main-wrapper .pc-mode .banner-slogan-id, .site-main-wrapper .pc-mode .banner-slogan-jp, .site-main-wrapper .pc-mode .banner-slogan-kr, .site-main-wrapper .pc-mode .banner-slogan-th, .site-main-wrapper .pc-mode .banner-slogan-tw, .site-main-wrapper .pc-mode .banner-slogan-vn {
+  .site-main-wrapper .pc-mode .connect-part, .site-main-wrapper .pc-mode .background, .site-main-wrapper .pc-mode .glow, .site-main-wrapper .pc-mode .character, .site-main-wrapper .pc-mode .character-right, .site-main-wrapper .pc-mode .character .handR, .site-main-wrapper .pc-mode .character .handL, .site-main-wrapper .pc-mode .mask, .site-main-wrapper .pc-mode .banner-slogan-cn, .site-main-wrapper .pc-mode .banner-slogan-en, .site-main-wrapper .pc-mode .banner-slogan-id, .site-main-wrapper .pc-mode .banner-slogan-jp, .site-main-wrapper .pc-mode .banner-slogan-kr, .site-main-wrapper .pc-mode .banner-slogan-th, .site-main-wrapper .pc-mode .banner-slogan-tw, .site-main-wrapper .pc-mode .banner-slogan-vn, .site-main-wrapper .pc-mode .ribbon, .site-main-wrapper .pc-mode .ribbon .flower1, .site-main-wrapper .pc-mode .ribbon .flower2 {
     height: 490px;
   }
-  .site-main-wrapper .pc-mode .ribbon {
-    height: 630px;
+  .site-main-wrapper .pc-mode #mycanvas {
+    height: 50vw;
   }
   .prize-box {
     top: -7rem;
@@ -873,9 +866,9 @@ ul {
     height: 510px;
   }
   .site-main-wrapper .pc-mode .treasure {
-    height: 530px;
+    height: 490px;
   }
-  .site-main-wrapper .pc-mode .connect-part, .site-main-wrapper .pc-mode .background, .site-main-wrapper .pc-mode .glow, .site-main-wrapper .pc-mode .character, .site-main-wrapper .pc-mode .character-right, .site-main-wrapper .pc-mode .character .handR, .site-main-wrapper .pc-mode .character .handL, .site-main-wrapper .pc-mode .mask, .site-main-wrapper .pc-mode .banner-slogan-cn, .site-main-wrapper .pc-mode .banner-slogan-en, .site-main-wrapper .pc-mode .banner-slogan-id, .site-main-wrapper .pc-mode .banner-slogan-jp, .site-main-wrapper .pc-mode .banner-slogan-kr, .site-main-wrapper .pc-mode .banner-slogan-th, .site-main-wrapper .pc-mode .banner-slogan-tw, .site-main-wrapper .pc-mode .banner-slogan-vn {
+  .site-main-wrapper .pc-mode .connect-part, .site-main-wrapper .pc-mode .background, .site-main-wrapper .pc-mode .glow, .site-main-wrapper .pc-mode .character, .site-main-wrapper .pc-mode .character-right, .site-main-wrapper .pc-mode .character .handR, .site-main-wrapper .pc-mode .character .handL, .site-main-wrapper .pc-mode .mask, .site-main-wrapper .pc-mode .banner-slogan-cn, .site-main-wrapper .pc-mode .banner-slogan-en, .site-main-wrapper .pc-mode .banner-slogan-id, .site-main-wrapper .pc-mode .banner-slogan-jp, .site-main-wrapper .pc-mode .banner-slogan-kr, .site-main-wrapper .pc-mode .banner-slogan-th, .site-main-wrapper .pc-mode .banner-slogan-tw, .site-main-wrapper .pc-mode .banner-slogan-vn, .site-main-wrapper .pc-mode .ribbon .flower1, .site-main-wrapper .pc-mode .ribbon .flower2 {
     height: 411px;
   }
   .prize-box {
@@ -939,11 +932,8 @@ ul {
   .site-main-wrapper .pc-mode .treasure {
     height: 464px;
   }
-  .site-main-wrapper .pc-mode .connect-part, .site-main-wrapper .pc-mode .background, .site-main-wrapper .pc-mode .glow, .site-main-wrapper .pc-mode .character, .site-main-wrapper .pc-mode .character-right, .site-main-wrapper .pc-mode .character .handR, .site-main-wrapper .pc-mode .character .handL, .site-main-wrapper .pc-mode .mask, .site-main-wrapper .pc-mode .banner-slogan-cn, .site-main-wrapper .pc-mode .banner-slogan-en, .site-main-wrapper .pc-mode .banner-slogan-id, .site-main-wrapper .pc-mode .banner-slogan-jp, .site-main-wrapper .pc-mode .banner-slogan-kr, .site-main-wrapper .pc-mode .banner-slogan-th, .site-main-wrapper .pc-mode .banner-slogan-tw, .site-main-wrapper .pc-mode .banner-slogan-vn {
-    height: 411px;
-  }
-  .site-main-wrapper .pc-mode .ribbon {
-    height: 600px;
+  .site-main-wrapper .pc-mode .connect-part, .site-main-wrapper .pc-mode .background, .site-main-wrapper .pc-mode .glow, .site-main-wrapper .pc-mode .character, .site-main-wrapper .pc-mode .character-right, .site-main-wrapper .pc-mode .character .handR, .site-main-wrapper .pc-mode .character .handL, .site-main-wrapper .pc-mode .mask, .site-main-wrapper .pc-mode .banner-slogan-cn, .site-main-wrapper .pc-mode .banner-slogan-en, .site-main-wrapper .pc-mode .banner-slogan-id, .site-main-wrapper .pc-mode .banner-slogan-jp, .site-main-wrapper .pc-mode .banner-slogan-kr, .site-main-wrapper .pc-mode .banner-slogan-th, .site-main-wrapper .pc-mode .banner-slogan-tw, .site-main-wrapper .pc-mode .banner-slogan-vn, .site-main-wrapper .pc-mode .ribbon .flower1, .site-main-wrapper .pc-mode .ribbon .flower2 {
+    height: 400px;
   }
   .prize-box {
     top: -5rem;
@@ -970,16 +960,19 @@ ul {
 }
 
 @media screen and (max-width: 760px) {
+  #mycanvas {
+    height: 600px;
+  }
   .site-main-wrapper {
     height: 100%;
   }
   .site-main-wrapper .pc-mode {
     position: relative;
     width: 100%;
-    height: 115vw;
+    height: 113vw;
   }
   .site-main-wrapper .pc-mode .background {
-    height: 115vw;
+    height: 107vw;
     background: url("../images/events/mobile.jpg") top center no-repeat;
     background-size: 100%;
     -webkit-animation: none;
@@ -987,19 +980,20 @@ ul {
   }
   .site-main-wrapper .pc-mode .glow {
     height: 100%;
-    background: url("../images/events/light_mb.jpg") top center no-repeat;
     background-size: 100%;
-    -webkit-transform-origin: 50% 60%;
-            transform-origin: 50% 60%;
-    -webkit-animation: purple_light2 5s ease forwards infinite;
-            animation: purple_light2 5s ease forwards infinite;
-    mix-blend-mode: screen;
+    top: 0;
+    -webkit-animation: purple_light2 6s linear infinite;
+            animation: purple_light2 6s linear infinite;
     z-index: 15;
   }
   .site-main-wrapper .pc-mode .character {
     height: 100%;
     background: url("../images/events/mb_character.png") top center no-repeat;
     background-size: 100%;
+    -webkit-animation: showUp 1s both;
+            animation: showUp 1s both;
+    -webkit-animation-delay: 300ms;
+            animation-delay: 300ms;
   }
   .site-main-wrapper .pc-mode .connect-part {
     height: 100%;
@@ -1009,10 +1003,8 @@ ul {
   }
   .site-main-wrapper .pc-mode .treasure {
     height: 100%;
-    background: url("../images/events/cloud.png") top center no-repeat;
+    background: url("../images/events/connect_mb.png") top center no-repeat;
     background-size: 100%;
-    -webkit-animation: sakura_mb 2s;
-            animation: sakura_mb 2s;
     z-index: 19;
   }
   .site-main-wrapper .pc-mode .banner-slogan-cn {
@@ -1042,21 +1034,16 @@ ul {
   .site-main-wrapper .pc-mode .bnTitle {
     height: 100%;
     background-size: 100%;
+    -webkit-transform-origin: 50% 70%;
+            transform-origin: 50% 70%;
   }
   .site-main-wrapper .pc-mode .ribbon {
     width: 100%;
     height: 100%;
     position: absolute;
-    background: url("../images/events/all_light_mb.jpg") top center no-repeat;
-    background-size: 100%;
-    mix-blend-mode: screen;
-    top: initial;
-    left: initial;
-    z-index: 18;
-    -webkit-transform: translateX(0) scale(1);
-            transform: translateX(0) scale(1);
-    -webkit-animation: sakuraLight 6s infinite ease;
-            animation: sakuraLight 6s infinite ease;
+  }
+  .site-main-wrapper .pc-mode #mycanvas {
+    height: 105vw;
   }
   .switch-list {
     padding: 1rem;
